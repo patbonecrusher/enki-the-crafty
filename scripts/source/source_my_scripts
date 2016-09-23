@@ -1,3 +1,11 @@
+# -----------------------------------------------------------------------------
+# "THE BEER-WARE LICENSE" (Revision 42):
+# <bonecrusher@covenofchaos.com>  wrote this file.  As long as  you retain this
+# notice you can do whatever you want with this stuff.  If we meet some day and
+# you think this stuff is worth it, you can buy me a beer in return.
+#  > BoneCrusher <
+# -----------------------------------------------------------------------------
+
 scripts=(
   enki
   brew
@@ -5,11 +13,16 @@ scripts=(
   vscode
   vim
   aspnet
+  better_ls
+  goenv
+  jenv
+  rbenv
+  ssh
 )
 
 mydir=${0:a:h}
 for script in "${scripts[@]}"
 do
-  echo 'sourcing ' "${script}"
+  # echo 'sourcing ' "${script}"
   source ${mydir}/${script}
 done

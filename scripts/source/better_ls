@@ -1,6 +1,16 @@
+# -----------------------------------------------------------------------------
+# "THE BEER-WARE LICENSE" (Revision 42):
+# <bonecrusher@covenofchaos.com>  wrote this file.  As long as  you retain this
+# notice you can do whatever you want with this stuff.  If we meet some day and
+# you think this stuff is worth it, you can buy me a beer in return.
+#  > BoneCrusher <
+# -----------------------------------------------------------------------------
+
+mydir=${(%):-%N}
+mydir=`dirname $mydir`
+
 export LS_OPTIONS='--color=auto'
 
-mydir=${0:a:h}
 eval `gdircolors ${mydir}/dircolors`
 
 alias ls='gls ${LS_OPTIONS} --group-directories-first -hF'

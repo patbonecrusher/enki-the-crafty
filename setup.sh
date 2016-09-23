@@ -10,16 +10,40 @@
 [[ -z $1 ]] && { echo "You must specify a config file"; exit -1; }
 source $1
 
+mydir=${(%):-%N}
+mydir=`dirname $mydir`
 mydir=${0:a:h}
+echo $mydir
 
-function setup_omyzsh {
-  if [[ ! -d "${mydir}/.oh-my-zsh" ]]; then
-  	(cd "${mydir}" && git clone https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh)
+function setup_ohmyzsh {
+  destination="${1}"
+  if [[ ! -d "${destination}/.oh-my-zsh" ]]; then
+  	(cd "${destination}" && git clone https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh)
   else
-  	(cd "${mydir}/.oh-my-zsh" && git pull origin master)
+  	(cd "${destination}/.oh-my-zsh" && git pull origin master)
   fi
 }
 
-function setup_dotfile {
+function setup_dotfiles ()
+{
+  dotfile_location="${1}"
+  dotfiles=(`ls $dotfile_location`)
+  destination="${2}"
 
+  for dotfile in "${dotfiles[@]}"
+  do
+    fullpath_dest="${destination}"/."${dotfile}"
+    fullpath_src="${dotfile_location}/${dotfile}"
+
+    [[ -L "${fullpath_dest}" ]] && rm "${fullpath_dest}";
+    if [[ -f "${fullpath_src}" ]]; then
+      [[ -f "${fullpath_dest}" ]] && rm "${fullpath_dest}"
+    fi
+
+    ln -s "${fullpath_src}" "${fullpath_dest}"
+
+  done
 }
+
+setup_ohmyzsh ${1}
+setup_dotfiles ${mydir}/dotfiles ${1}

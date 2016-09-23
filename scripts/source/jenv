@@ -6,4 +6,11 @@
 #  > BoneCrusher <
 # -----------------------------------------------------------------------------
 
-export PATH=/opt/dotnet/dotnet-dev-osx-x64.latest:$PATH
+alias jenv_set_java_home='export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"'
+function init_jenv {
+  export PATH="$HOME/.jenv/bin:$PATH"
+  eval "$(jenv init -)"
+  export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"
+}
+
+alias load-java-env='init_jenv'

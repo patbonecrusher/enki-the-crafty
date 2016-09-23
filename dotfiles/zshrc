@@ -1,11 +1,14 @@
-export enki_location=${0:a:h}
+export enki_location=${(%):-%N}
+
+enki_location=`readlink $enki_location`
+enki_location=`dirname $enki_location`
+enki_location=$enki_location/..
+
 export omz_custom_location=${enki_location}/.omz-custom
 export ohmyzsh_location=${enki_location}/.oh-my-zsh
 
 [ -e "${enki_location}/.zsh_aliases" ] && source "${enki_location}/.zsh_aliases"
 [ -e "${enki_location}/.zshrc_local" ] && source "${enki_location}/.zshrc_local"
-
-export ENKI_HOME=${target_location}/.aphelia
 
 # You have to use npm to install npm, and that will give you the
 # completion.sh file you need.
@@ -21,13 +24,13 @@ zstyle ':completion:*:warnings' format 'No matches for: %d'
 zstyle ':completion:*' group-name''
 
 [[ -z $ZSH_THEME ]] && ZSH_THEME="bonecrusher" #"apheleia"
-plugins=(git macports textmate ruby osx git-flow github git-pharos phl)
-plugins=($plugins $project_plugins)
+plugins=(git macports ruby osx git-flow github)
+# plugins=($plugins $project_plugins)
 
-source $ZSH/oh-my-zsh.sh
+[ -e "${enki_location}/.zsh_aliases" ] && source "${enki_location}/.zsh_aliases"
+[ -e "$ZSH/oh-my-zsh.sh" ] && source "$ZSH/oh-my-zsh.sh"
 
 autoload -U promptinit
 promptinit
 
-mydir=${0:a:h}
-${mydir}/scripts/source/source_my_scripts
+source ${enki_location}/scripts/source/source_my_scripts
