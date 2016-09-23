@@ -1,0 +1,10 @@
+export LS_OPTIONS='--color=auto'
+
+mydir=${0:a:h}
+eval `gdircolors ${mydir}/dircolors`
+
+alias ls='gls ${LS_OPTIONS} --group-directories-first -hF'
+alias ll='gls ${LS_OPTIONS} --group-directories-first -lhF'
+alias l='gls ${LS_OPTIONS} --group-directories-first -lAhF'
+alias c="clear"
+alias e="exit"

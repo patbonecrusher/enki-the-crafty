@@ -1,0 +1,91 @@
+" -----------------------------------------------------------------------------
+" Vundle plugin stuff.  After adding new plugin, run :PluginInstall
+" -----------------------------------------------------------------------------
+set nocompatible              " be iMproved, required
+filetype off                  " required
+set encoding=utf-8            " to load powerline font
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'othree/html5.vim'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+" Put your non-Plugin stuff after this line
+" -----------------------------------------------------------------------------
+
+" -----------------------------------------------------------------------------
+execute pathogen#infect()
+syntax on
+call pathogen#helptags()
+" -----------------------------------------------------------------------------
+
+
+" -----------------------------------------------------------------------------
+"  The following is to be able to paste in iterm (not in vim)
+"  and to ensure that the code will not try to be indented
+"  It will paste as is
+" -----------------------------------------------------------------------------
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+" -----------------------------------------------------------------------------
+
+:set modeline
+:set showmode
+:set nowrap
+:set nowrapscan
+:set ruler
+:set showmatch
+:set smartindent
+:set nohlsearch
+:set formatoptions+=ro
+:set backspace=2
+:set background=dark
+:set wildmenu
+:set wildmode=list:longest,full
+set guifont=Source\ Code\ Pro\ for\ Powerline "make sure to escape the spaces in the name properly
+
+" -----------------------------------------------------------------------------
+"  Keyboard shortcut mapping.
+" -----------------------------------------------------------------------------
+map <C-n> :NERDTreeToggle<CR>
+map <C-r> gg=G<CR>
+" -----------------------------------------------------------------------------
+
+" -----------------------------------------------------------------------------
+" Other cruft.
+" -----------------------------------------------------------------------------
+" Make vim turn *off* expandtab for files named Makefile or makefile
+" We need the tab literal
+:autocmd BufNewFile,BufRead [Mm]akefile* set noexpandtab
+
+" Make vim recognize a file ending in ".template" be a C++ source file
+:autocmd BufNewFile,BufRead *.template set filetype=cpp
+
+" Make vim use 8 character tabstops and recognize # as a start-of-comment token
+" in assembly source files
+:autocmd BufNewFile,BufRead *.s set tabstop=8 noexpandtab | syn match asmComment "#"
+" -----------------------------------------------------------------------------
+
+set clipboard=unnamed
+" set statusline=%{fugitive#statusline()}
+"
+" let g:airline_left_sep='>'
+
+let g:airline_powerline_fonts = 1

@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# -----------------------------------------------------------------------------
+# "THE BEER-WARE LICENSE" (Revision 42):
+# <bonecrusher@covenofchaos.com>  wrote this file.  As long as  you retain this
+# notice you can do whatever you want with this stuff.  If we meet some day and
+# you think this stuff is worth it, you can buy me a beer in return.
+#  > BoneCrusher <
+# -----------------------------------------------------------------------------
+
+xam_exec=`ls /Applications/Xamarin\ Studio.app/Contents/MacOS/XamarinStudio`
+
+function ensure_xam_is_installed {
+	if [[ -z $xam_exec ]]; then
+		echo "Install xamarin studio"
+		exit -1
+	fi
+}
+
+ensure_xam_is_installed
+echo $xam_exec
+$("$xam_exec" $1 &)

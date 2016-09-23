@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# -----------------------------------------------------------------------------
+# "THE BEER-WARE LICENSE" (Revision 42):
+# <bonecrusher@covenofchaos.com>  wrote this file.  As long as  you retain this
+# notice you can do whatever you want with this stuff.  If we meet some day and
+# you think this stuff is worth it, you can buy me a beer in return.
+#  > BoneCrusher <
+# -----------------------------------------------------------------------------
+
+fortune_cmd=`which fortune`
+cowsay_cmd=`which cowsay`
+lolcat_cmd=`which lolcat`
+
+# If we don't have fortune, there is nothing we can do! Bailout.
+# -----------------------------------------------------------------------------
+if [[ -z $fortune_cmd ]]; then
+	echo "Install fortune!"
+	exit -1
+fi
+
+# Run a fortune and capture it in a variable for later usage.
+# -----------------------------------------------------------------------------
+message=`$fortune_cmd`
+
+# If we have cowsay, lets find a random cow and add to the
+# cmd arguments.
+# -----------------------------------------------------------------------------
+if [[ ! -z $cowsay_cmd ]]; then
+	cows=`$cowsay_cmd -l | awk '{ print $0; }' | sed -e '1,2d;s/.*:/:/g'`
+	cows=($cows)
+	numCows=${#cows[@]}
+	cowIdx=`perl -e 'print int(rand(0-($ARGV[0]-1))) + ($ARGV[0]-1)' $numCows`
+	message=$(echo "$message" | $cowsay_cmd -f ${cows[$cowIdx]} -W 70 -d)
+fi
+
+# If we have lolcat, lets pretty up the output!
+# -----------------------------------------------------------------------------
+if [[ ! -z $lolcat_cmd ]]; then
+	echo -e "$message" | $lolcat_cmd
+else
+	echo -e "$message"
+fi

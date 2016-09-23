@@ -1,0 +1,4 @@
+mydir=${0:a:h}
+
+export PATH=$PATH:${mydir}/scripts/common
+export SHELL=/usr/local/bin/zsh
