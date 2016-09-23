@@ -3,3 +3,7 @@ export PATH=/usr/local/bin:$PATH
 alias brew-check-update='brew bundle check'
 alias brew-do-update='brew bundle cleanup'
 alias brew-generate='brew bundle dump'
+
+
+. `brew --prefix`/etc/profile.d/z.sh
+eval $(thefuck --alias)

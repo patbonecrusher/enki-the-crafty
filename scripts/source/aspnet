@@ -1,0 +1,1 @@
+export PATH=/opt/dotnet/dotnet-dev-osx-x64.latest:$PATH

@@ -3,6 +3,8 @@ scripts=(
   brew
   core_utils
   vscode
+  vim
+  aspnet
 )
 
 mydir=${0:a:h}
