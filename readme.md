@@ -1,36 +1,26 @@
 ## What is this for
 
-Repo to help quickly setup my macOS shell environment, when restarting or
-when getting a new one.
+Repo to help quickly setup my macOS softwares when restarting or when getting a new computer.
 
 ### It as 2 purposes
 - It serves as a backup of all my '.'files
 - It serves as a backup for crafter cli helper shell scripts
 
-### It will:
-- Install brew
-- Via a brewfile, install:
-	- command line brew packages such as node, jenv, rbenv...
-	- macOS application not distributed via the AppStore, such as SourceTree...
-	- macOS application purchased from the AppStore
-
-
 ### Assumptions
-- Only work on macOS
-- This is based on zsh and oh-my-zsh
+- Depends on brew
 
 ## Usage
+
 On macOS, in your favorite terminal window and run theses commands:
 
 ```bash
-$ cd ~
-$ git clone https@github.com:patbonecrusher/enki-the-crafty.git .enki
-$ cd .enky && ./setup.sh
+$ cd /where/ever/you/want/to/clone/this/project
+$ git clone https@github.com:patbonecrusher/enki-the-creator.git
+$ cd enki-the-creator && ./setup.sh
 ```
 
-
 ## Related Repositories
-- [To download and setup the softwares that I use](https://github.com/patbonecrusher/enki-the-creator)
+- [My dot configs](https://github.com/patbonecrusher/enki-the-crafty)
 
 ## Who was Enki
 
@@ -39,4 +29,3 @@ $ cd .enky && ./setup.sh
 > Ea has associations with wisdom, magic and incantations. He was a favourite god amongst diviners TT  (bārû) and exorcist priests TT  (ašipū) as he is the ultimate source of all ritual knowledge used by exorcists to avert and expel evil. Ea was patron of the arts and crafts, and all other achievements of civilization. His connection with water meant that Ea was also the patron deity of cleaners (Foster 2005: 151-152).
 
 http://oracc.museum.upenn.edu/amgg/listofdeities/enki/
-
