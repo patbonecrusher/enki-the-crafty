@@ -7,11 +7,19 @@ when getting a new one.
 - It serves as a backup of all my '.'files
 - It serves as a backup for crafter cli helper shell scripts
 
+### It will:
+- Install brew
+- Via a brewfile, install:
+	- command line brew packages such as node, jenv, rbenv...
+	- macOS application not distributed via the AppStore, such as SourceTree...
+	- macOS application purchased from the AppStore
+
+
 ### Assumptions
+- Only work on macOS
 - This is based on zsh and oh-my-zsh
 
 ## Usage
-
 On macOS, in your favorite terminal window and run theses commands:
 
 ```bash
@@ -22,7 +30,7 @@ $ cd .enky && ./setup.sh
 
 
 ## Related Repositories
-- [Enki the creator](https://github.com/patbonecrusher/enki-the-creator)
+- [To download and setup the softwares that I use](https://github.com/patbonecrusher/enki-the-creator)
 
 ## Who was Enki
 
