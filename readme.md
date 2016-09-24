@@ -6,9 +6,6 @@ Repo to help quickly setup my macOS softwares when restarting or when getting a 
 - It serves as a backup of all my '.'files
 - It serves as a backup for crafter cli helper shell scripts
 
-### Assumptions
-- Depends on brew
-
 ## Usage
 
 On macOS, in your favorite terminal window and run theses commands:
