@@ -17,7 +17,7 @@ $ cd enki-the-creator && ./setup.sh
 ```
 
 ## Related Repositories
-- [My dot configs](https://github.com/patbonecrusher/enki-the-crafty)
+- [Setup softwares on new computer](https://github.com/patbonecrusher/enki-the-creator)
 
 ## Who was Enki
 
