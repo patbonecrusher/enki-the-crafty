@@ -1,19 +1,22 @@
 ## What is this for
-
-Repo to help quickly setup my macOS softwares when restarting or when getting a new computer.
+Repo to help quickly setup my macOS shell environment, when restarting or when getting a new mac.
 
 ### It as 2 purposes
 - It serves as a backup of all my '.'files
 - It serves as a backup for crafter cli helper shell scripts
+
+## Assumptions
+- Only work on macOS
+- This is based on zsh and oh-my-zsh
 
 ## Usage
 
 On macOS, in your favorite terminal window and run theses commands:
 
 ```bash
-$ cd /where/ever/you/want/to/clone/this/project
-$ git clone https@github.com:patbonecrusher/enki-the-creator.git
-$ cd enki-the-creator && ./setup.sh
+$ cd ~
+$ git clone https@github.com:patbonecrusher/enki-the-crafty.git .enki
+$ cd .enky && ./setup.sh
 ```
 
 ## Related Repositories
