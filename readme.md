@@ -1,7 +1,6 @@
 ## What is this for
 Repo to help quickly setup my macOS shell environment, when restarting or when getting a new mac.
 
-### It as 2 purposes
 - It serves as a backup of all my '.'files
 - It serves as a backup for crafter cli helper shell scripts
 
