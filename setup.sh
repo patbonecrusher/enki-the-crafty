@@ -45,5 +45,5 @@ function setup_dotfiles ()
   done
 }
 
-setup_ohmyzsh ${1}
-setup_dotfiles ${mydir}/dotfiles ${1}
+setup_ohmyzsh ${mydir}
+setup_dotfiles ${mydir}/dotfiles ../${mydir}
