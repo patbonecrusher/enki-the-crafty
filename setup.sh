@@ -7,8 +7,8 @@
 # you think this stuff is worth it, you can buy me a beer in return.
 #  > BoneCrusher <
 # -----------------------------------------------------------------------------
-[[ -z $1 ]] && { echo "You must specify a config file"; exit -1; }
-source $1
+# [[ -z $1 ]] && { echo "You must specify a config file"; exit -1; }
+# source $1
 
 mydir=${(%):-%N}
 mydir=`dirname $mydir`
@@ -46,4 +46,4 @@ function setup_dotfiles ()
 }
 
 setup_ohmyzsh ${mydir}
-setup_dotfiles ${mydir}/dotfiles ../${mydir}
+setup_dotfiles ${mydir}/dotfiles ${mydir}/..

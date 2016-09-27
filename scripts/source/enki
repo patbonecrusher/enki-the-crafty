@@ -12,7 +12,4 @@ mydir=`dirname $mydir`
 export PATH=$PATH:${mydir}/../bin
 export SHELL=/usr/local/bin/zsh
 
-. `brew --prefix`/etc/profile.d/z.sh
-eval $(thefuck --alias)
-
 alias rm='trash'
