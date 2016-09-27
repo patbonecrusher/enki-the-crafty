@@ -9,4 +9,4 @@
 export EDITOR=vim
 alias vi='vim'
 
-export PATH=$PATH:~/.vimpkg/bin:~/.vimpkg/bin
+export PATH=$PATH:~/.vimpkg/bin

@@ -7,7 +7,6 @@
 # -----------------------------------------------------------------------------
 
 export PATH=/usr/local/bin:$PATH
-echo `which brew`
 
 alias brew-check-update='brew bundle check'
 alias brew-do-update='brew bundle cleanup'

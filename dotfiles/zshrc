@@ -11,7 +11,7 @@ export ohmyzsh_location=${enki_location}/.oh-my-zsh
 [ -e "${enki_location}/.zshrc_local" ] && source "${enki_location}/.zshrc_local"
 
 # You have to use npm to install npm, and that will give you the
-# completion.sh file you need.
+# completionaphe.sh file you need.
 #source /opt/local/lib/node_modules/npm/lib/utils/completion.sh
 
 export ZSH_CUSTOM=${omz_custom_location}
@@ -35,6 +35,6 @@ promptinit
 
 source ${enki_location}/scripts/source/source_my_scripts
 
-export PATH=/Users/patricklaplante/Downloads/dotnet-dev-osx-x64.latest:/usr/local/share/dotnet/shared/Microsoft.NETCore.App/1.0.0-rc2-3002700:/usr/local/share/dotnet/bin:/Users/patricklaplante/.dnx/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/patricklaplante/.aphelia2/scripts/common:/Users/patricklaplante/.vimpkg/bin
+# export PATH=/Users/patricklaplante/Downloads/dotnet-dev-osx-x64.latest:/usr/local/share/dotnet/shared/Microsoft.NETCore.App/1.0.0-rc2-3002700:/usr/local/share/dotnet/bin:/Users/patricklaplante/.dnx/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/patricklaplante/.aphelia2/scripts/common:/Users/patricklaplante/.vimpkg/bin
 
-export PATH=/Users/patricklaplante/Downloads/dotnet-dev-osx-x64.latest:/usr/local/share/dotnet/shared/Microsoft.NETCore.App/1.0.0-rc2-3002700:/usr/local/share/dotnet/bin:/Users/patricklaplante/.dnx/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/patricklaplante/.aphelia2/scripts/common:/Users/patricklaplante/.vimpkg/bin:/Users/patricklaplante/.vimpkg/bin
+# export PATH=/Users/patricklaplante/Downloads/dotnet-dev-osx-x64.latest:/usr/local/share/dotnet/shared/Microsoft.NETCore.App/1.0.0-rc2-3002700:/usr/local/share/dotnet/bin:/Users/patricklaplante/.dnx/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/patricklaplante/.aphelia2/scripts/common:/Users/patricklaplante/.vimpkg/bin:/Users/patricklaplante/.vimpkg/bin
