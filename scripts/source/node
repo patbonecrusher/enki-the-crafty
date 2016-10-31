@@ -6,24 +6,5 @@
 #  > BoneCrusher <
 # -----------------------------------------------------------------------------
 
-scripts=(
-  enki
-  brew
-  core_utils
-  vscode
-  vim
-  aspnet
-  better_ls
-  goenv
-  jenv
-  rbenv
-  ssh
-  node
-)
-
-mydir=${0:a:h}
-for script in "${scripts[@]}"
-do
-  # echo 'sourcing ' "${script}"
-  source ${mydir}/${script}
-done
+alias list-outdated-npm-packages='npm outdated -g --depth=0'
+alias update-all-npm-packages='npm update -g'

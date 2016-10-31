@@ -13,13 +13,13 @@
   tool = sourcetree
 
 [difftool "sourcetree"]
-  cmd = /Applications/Downloaded/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
   trustExitCode = true
-  path =
+	path = 
 
 [mergetool "sourcetree"]
-  cmd = /Applications/Downloaded/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
-  trustExitCode = true
+	cmd = /Users/pat/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
 
 [alias]
   lg1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%cr)%C(reset) %C(white)%s%C(reset) %C(bold white)â€” %cn%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative

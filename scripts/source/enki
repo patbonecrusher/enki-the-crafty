@@ -14,3 +14,54 @@ export SHELL=/usr/local/bin/zsh
 
 alias rm='trash'
 alias path='echo -e ${PATH//:/\\n}'
+
+update() {
+    local brew="brew update; brew upgrade;"
+    local gisty="gisty pull_all; gisty sync_delete"
+    local gem="gem update;"
+    local pip="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U -q"
+    local npm="npm update -g;"
+    sh -c $brew$gisty$gem$npm; sudo sh -c $pip
+}
+
+cdf() {
+    target=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
+    if [ "$target" != "" ]; then
+        cd "$target"; pwd
+    else
+        echo 'No Finder window found' >&2
+    fi
+}
+
+man() {
+    env \
+    LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+    LESS_TERMCAP_md=$(printf "\e[1;31m") \
+    LESS_TERMCAP_me=$(printf "\e[0m") \
+    LESS_TERMCAP_se=$(printf "\e[0m") \
+    LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+    LESS_TERMCAP_ue=$(printf "\e[0m") \
+    LESS_TERMCAP_us=$(printf "\e[1;32m") \
+    man "$@"
+}
+
+
+gitr(){
+    trap 'rm -f /tmp/.git_ssh.$$' 0
+    SSH_KEY="~/.ssh/id_rsa"
+    echo "ssh -i $SSH_KEY \$@" > /tmp/.git_ssh.$$
+    chmod +x /tmp/.git_ssh.$$
+    export GIT_SSH=/tmp/.git_ssh.$$
+    [ "$1" = "git" ] && shift
+    git "$@"
+}
+
+cats() {
+    local out colored
+    out=$(/bin/cat $@)
+    colored=$(echo $out | pygmentize -f console -g 2>/dev/null)
+    [[ -n $colored ]] && echo "$colored" || echo "$out"
+}
+
+export GISTY_DIR="$HOME/Projects/gists"
+export GISTY_ACCESS_TOKEN=2abe2fcb1f38a14e4a8d7c03750e5362b123cee3
