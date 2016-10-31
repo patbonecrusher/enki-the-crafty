@@ -64,4 +64,3 @@ cats() {
 }
 
 export GISTY_DIR="$HOME/Projects/gists"
-export GISTY_ACCESS_TOKEN=2abe2fcb1f38a14e4a8d7c03750e5362b123cee3
