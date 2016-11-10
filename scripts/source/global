@@ -1,0 +1,45 @@
+update() {
+    local brew="brew update; brew upgrade;"
+    local gisty="gisty pull_all; gisty sync_delete"
+    local gem="gem update;"
+    local pip="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U -q"
+    sh -c $brew$gisty; sudo sh -c $gem$pip
+}
+
+cdf() {
+    target=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
+    if [ "$target" != "" ]; then
+        cd "$target"; pwd
+    else
+        echo 'No Finder window found' >&2
+    fi
+}
+
+man() {
+    env \
+    LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+    LESS_TERMCAP_md=$(printf "\e[1;31m") \
+    LESS_TERMCAP_me=$(printf "\e[0m") \
+    LESS_TERMCAP_se=$(printf "\e[0m") \
+    LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+    LESS_TERMCAP_ue=$(printf "\e[0m") \
+    LESS_TERMCAP_us=$(printf "\e[1;32m") \
+    man "$@"
+}
+
+gitss(){
+    trap 'rm -f /tmp/.git_ssh.$$' 0
+    SSH_KEY="~/.ssh/id_rsa"
+    echo "ssh -i $SSH_KEY \$@" > /tmp/.git_ssh.$$
+    chmod +x /tmp/.git_ssh.$$
+    export GIT_SSH=/tmp/.git_ssh.$$
+    [ "$1" = "git" ] && shift
+    git "$@"
+}
+
+catc() {
+    local out colored
+    out=$(/bin/cat $@)
+    colored=$(echo $out | pygmentize -f console -g 2>/dev/null)
+    [[ -n $colored ]] && echo "$colored" || echo "$out"
+}

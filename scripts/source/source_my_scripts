@@ -19,6 +19,8 @@ scripts=(
   rbenv
   ssh
   node
+  global
+  gisty
 )
 
 mydir=${0:a:h}

@@ -15,3 +15,5 @@ alias brew-generate='brew bundle dump'
 
 . `brew --prefix`/etc/profile.d/z.sh
 eval $(thefuck --alias)
+
+alias mtr='sudo /usr/local/Cellar/mtr/0.87/sbin/mtr'
