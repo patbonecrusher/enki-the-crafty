@@ -42,7 +42,7 @@
   hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
   type = cat-file -t
   dump = cat-file -p
-  test = "!gi() { curl -s https://www.gitignore.io/api/$@ ;}; gi"
+  genignore = "!gi() { curl -s https://www.gitignore.io/api/$@ ;}; gi"
 
 [color]
   ui = auto

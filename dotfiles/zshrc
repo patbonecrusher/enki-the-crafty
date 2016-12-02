@@ -24,10 +24,9 @@ zstyle ':completion:*:warnings' format 'No matches for: %d'
 zstyle ':completion:*' group-name''
 
 [[ -z $ZSH_THEME ]] && ZSH_THEME="agnoster" #"apheleia"
-plugins=(git macports ruby osx git-flow github)
+plugins=(git osx git-flow github)
 # plugins=($plugins $project_plugins)
 
-[ -e "${enki_location}/.zsh_aliases" ] && source "${enki_location}/.zsh_aliases"
 [ -e "$ZSH/oh-my-zsh.sh" ] && source "$ZSH/oh-my-zsh.sh"
 
 autoload -U promptinit
@@ -38,3 +37,13 @@ source ${enki_location}/scripts/source/source_my_scripts
 # export PATH=/Users/patricklaplante/Downloads/dotnet-dev-osx-x64.latest:/usr/local/share/dotnet/shared/Microsoft.NETCore.App/1.0.0-rc2-3002700:/usr/local/share/dotnet/bin:/Users/patricklaplante/.dnx/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/patricklaplante/.aphelia2/scripts/common:/Users/patricklaplante/.vimpkg/bin
 
 # export PATH=/Users/patricklaplante/Downloads/dotnet-dev-osx-x64.latest:/usr/local/share/dotnet/shared/Microsoft.NETCore.App/1.0.0-rc2-3002700:/usr/local/share/dotnet/bin:/Users/patricklaplante/.dnx/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/patricklaplante/.aphelia2/scripts/common:/Users/patricklaplante/.vimpkg/bin:/Users/patricklaplante/.vimpkg/bin
+
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
+
+# mmv *.foo *.bar
+# This zmv enables mass renaming feature.
+# This is a zsh feature
+autoload -U zmv
+alias mmv='noglob zmv -W'
+
