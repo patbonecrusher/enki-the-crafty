@@ -72,3 +72,8 @@ export GISTY_DIR="$HOME/Projects/gists"
 
 
 alias listopenport='sudo lsof -i -P | grep -i "listen"'
+
+alias macinfo='archey'
+
+alias diskinfo='diskutil list'
+
