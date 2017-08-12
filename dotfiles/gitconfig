@@ -1,9 +1,9 @@
 [user]
-  name = Patrick Laplante
-  email = laplante.patrick@gmail.com
+	name = pat laplante
+	email = pat@covenofchaos.com
 
 [core]
-  excludesfile = /Users/patricklaplante/.gitignore_global
+	excludesfile = /Users/pat/.gitignore_global
   autocrlf = input
 
 [diff]
@@ -13,13 +13,13 @@
   tool = sourcetree
 
 [difftool "sourcetree"]
-  cmd = /Applications/Downloaded/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
   trustExitCode = true
-  path =
+	path = 
 
 [mergetool "sourcetree"]
-  cmd = /Applications/Downloaded/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
-  trustExitCode = true
+	cmd = /Users/pat/Desktop/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
 
 [alias]
   lg1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%cr)%C(reset) %C(white)%s%C(reset) %C(bold white)â€” %cn%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
@@ -42,7 +42,7 @@
   hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
   type = cat-file -t
   dump = cat-file -p
-  test = "!gi() { curl -s https://www.gitignore.io/api/$@ ;}; gi"
+  genignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 
 [color]
   ui = auto
@@ -72,3 +72,5 @@
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
+[commit]
+	template = /Users/pat/.stCommitMsg

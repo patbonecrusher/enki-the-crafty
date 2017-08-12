@@ -6,7 +6,5 @@
 #  > BoneCrusher <
 # -----------------------------------------------------------------------------
 
-export EDITOR=vim
-alias vi='vim'
-
-export PATH=$PATH:~/.vimpkg/bin
+alias list-outdated-npm-packages='npm outdated -g --depth=0'
+alias update-all-npm-packages='npm update -g'

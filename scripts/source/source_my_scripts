@@ -18,6 +18,7 @@ scripts=(
   jenv
   rbenv
   ssh
+  node
 )
 
 mydir=${0:a:h}

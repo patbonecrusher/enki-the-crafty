@@ -2,3 +2,5 @@
 .zsh-custom
 .zshrc
 .DS_Store
+.*.swp
+env

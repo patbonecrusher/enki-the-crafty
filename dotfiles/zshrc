@@ -11,7 +11,7 @@ export ohmyzsh_location=${enki_location}/.oh-my-zsh
 [ -e "${enki_location}/.zshrc_local" ] && source "${enki_location}/.zshrc_local"
 
 # You have to use npm to install npm, and that will give you the
-# completion.sh file you need.
+# completionaphe.sh file you need.
 #source /opt/local/lib/node_modules/npm/lib/utils/completion.sh
 
 export ZSH_CUSTOM=${omz_custom_location}
@@ -23,14 +23,40 @@ zstyle ':completion:*:messages' format '%d'
 zstyle ':completion:*:warnings' format 'No matches for: %d'
 zstyle ':completion:*' group-name''
 
-[[ -z $ZSH_THEME ]] && ZSH_THEME="bonecrusher" #"apheleia"
-plugins=(git macports ruby osx git-flow github)
+[[ -z $ZSH_THEME ]] && ZSH_THEME="agnoster" #"apheleia"
+plugins=(git osx git-flow github)
 # plugins=($plugins $project_plugins)
 
-[ -e "${enki_location}/.zsh_aliases" ] && source "${enki_location}/.zsh_aliases"
 [ -e "$ZSH/oh-my-zsh.sh" ] && source "$ZSH/oh-my-zsh.sh"
 
 autoload -U promptinit
 promptinit
 
 source ${enki_location}/scripts/source/source_my_scripts
+
+# export PATH=/Users/patricklaplante/Downloads/dotnet-dev-osx-x64.latest:/usr/local/share/dotnet/shared/Microsoft.NETCore.App/1.0.0-rc2-3002700:/usr/local/share/dotnet/bin:/Users/patricklaplante/.dnx/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/patricklaplante/.aphelia2/scripts/common:/Users/patricklaplante/.vimpkg/bin
+
+# export PATH=/Users/patricklaplante/Downloads/dotnet-dev-osx-x64.latest:/usr/local/share/dotnet/shared/Microsoft.NETCore.App/1.0.0-rc2-3002700:/usr/local/share/dotnet/bin:/Users/patricklaplante/.dnx/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/patricklaplante/.aphelia2/scripts/common:/Users/patricklaplante/.vimpkg/bin:/Users/patricklaplante/.vimpkg/bin
+
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
+
+# mmv *.foo *.bar
+# This zmv enables mass renaming feature.
+# This is a zsh feature
+autoload -U zmv
+alias mmv='noglob zmv -W'
+
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+export PATH=$PATH:/usr/local/share/dotnet
+
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+
+###-tns-completion-start-###
+if [ -f /Users/pat/.tnsrc ]; then 
+    source /Users/pat/.tnsrc 
+fi
+###-tns-completion-end-###
+
+alias npm-exec='PATH=$(npm bin):$PATH'
