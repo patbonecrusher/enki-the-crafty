@@ -60,3 +60,5 @@ fi
 ###-tns-completion-end-###
 
 alias npm-exec='PATH=$(npm bin):$PATH'
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
