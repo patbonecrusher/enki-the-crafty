@@ -1,5 +1,6 @@
 .oh-my-zsh
 .zsh-custom
 .zshrc
+.DS_Store
 .*.swp
 env
