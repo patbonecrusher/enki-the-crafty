@@ -8,3 +8,5 @@
 
 alias list-outdated-npm-packages='npm outdated -g --depth=0'
 alias update-all-npm-packages='npm update -g'
+alias ng="npm list -g --depth=0 2>/dev/null"
+alias nlf="npm list --depth=0 2>/dev/null"

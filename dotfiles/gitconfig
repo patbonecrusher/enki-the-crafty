@@ -1,6 +1,6 @@
 [user]
-	name = pat laplante
-	email = pat@covenofchaos.com
+	name = Patrick Laplante
+	email = laplante.patrick@gmail.com
 
 [core]
 	excludesfile = /Users/pat/.gitignore_global
