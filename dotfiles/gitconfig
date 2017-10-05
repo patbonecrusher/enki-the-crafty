@@ -1,25 +1,25 @@
 [user]
-	name = Patrick Laplante
-	email = laplante.patrick@gmail.com
+  name = Patrick Laplante
+  email = laplante.patrick@gmail.com
 
 [core]
-	excludesfile = /Users/pat/.gitignore_global
+  excludesfile = /Users/pat/.gitignore_global
   autocrlf = input
 
 [diff]
-  tool = sourcetree
+	tool = diffmerge
 
 [merge]
-  tool = sourcetree
+	tool = diffmerge
 
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
   trustExitCode = true
-	path = 
+  path = 
 
 [mergetool "sourcetree"]
-	cmd = /Users/pat/Desktop/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  cmd = /Users/pat/Desktop/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
 
 [alias]
   lg1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%cr)%C(reset) %C(white)%s%C(reset) %C(bold white)â€” %cn%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
@@ -74,3 +74,8 @@
   smudge = git-media-smudge %f
 [commit]
 	template = /Users/pat/.stCommitMsg
+[difftool "diffmerge"]
+	cmd = /usr/local/bin/diffmerge \"$LOCAL\" \"$REMOTE\"
+[mergetool "diffmerge"]
+	trustExitCode = true
+	cmd = /usr/local/bin/diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
