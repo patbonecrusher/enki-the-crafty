@@ -44,6 +44,8 @@
   dump = cat-file -p
   genignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 	alias = config --get-regexp ^alias\\.
+	 ec = config --global -e
+	 up = !git pull --rebase --prune $@ && git submodule update --init --recursive
 
 [color]
   ui = auto
