@@ -43,6 +43,7 @@
   type = cat-file -t
   dump = cat-file -p
   genignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+	alias = config --get-regexp ^alias\\.
 
 [color]
   ui = auto
