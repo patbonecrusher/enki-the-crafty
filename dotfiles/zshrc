@@ -7,55 +7,5 @@ enki_location=$enki_location/..
 export omz_custom_location=${enki_location}/.omz-custom
 export ohmyzsh_location=${enki_location}/.oh-my-zsh
 
-[ -e "${enki_location}/.zsh_aliases" ] && source "${enki_location}/.zsh_aliases"
-[ -e "${enki_location}/.zshrc_local" ] && source "${enki_location}/.zshrc_local"
-
-# You have to use npm to install npm, and that will give you the
-# completionaphe.sh file you need.
-#source /opt/local/lib/node_modules/npm/lib/utils/completion.sh
-
-export ZSH_CUSTOM=${omz_custom_location}
-export ZSH=${ohmyzsh_location}
-
-zstyle ':completion:*' verbose yes
-zstyle ':completion:*:descriptions' format '%B%d%b'
-zstyle ':completion:*:messages' format '%d'
-zstyle ':completion:*:warnings' format 'No matches for: %d'
-zstyle ':completion:*' group-name''
-
-[[ -z $ZSH_THEME ]] && ZSH_THEME="agnoster" #"apheleia"
-plugins=(git osx git-flow github)
-# plugins=($plugins $project_plugins)
-
-[ -e "$ZSH/oh-my-zsh.sh" ] && source "$ZSH/oh-my-zsh.sh"
-
-autoload -U promptinit
-promptinit
-
 source ${enki_location}/scripts/source/source_my_scripts
 
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
-
-# mmv *.foo *.bar
-# This zmv enables mass renaming feature.
-# This is a zsh feature
-autoload -U zmv
-alias mmv='noglob zmv -W'
-
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
-
-###-tns-completion-start-###
-if [ -f /Users/pat/.tnsrc ]; then 
-    source /Users/pat/.tnsrc 
-fi
-###-tns-completion-end-###
-
-alias npm-exec='PATH=$(npm bin):$PATH'
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-export PATH="/usr/local/sbin:$PATH"

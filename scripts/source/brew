@@ -6,7 +6,7 @@
 #  > BoneCrusher <
 # -----------------------------------------------------------------------------
 
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 alias brew-check-update='brew bundle check'
 alias brew-do-update='brew bundle cleanup'
@@ -24,3 +24,10 @@ alias bsstart='brew services start'
 alias bsstop='brew services stop'
 alias bslist='brew services list'
 alias bsrestart='brew services restart'
+
+# mmv *.foo *.bar
+# This zmv enables mass renaming feature.
+# This is a zsh feature
+autoload -U zmv
+alias mmv='noglob zmv -W'
+

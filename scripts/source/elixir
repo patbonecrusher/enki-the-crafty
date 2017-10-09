@@ -6,29 +6,9 @@
 #  > BoneCrusher <
 # -----------------------------------------------------------------------------
 
-scripts=(
-  brew
-  zsh
-  enki
-  core_utils
-  vscode
-  vim
-  aspnet
-  better_ls
-  goenv
-  jenv
-  rbenv
-  ssh
-  node
-  elixir
-  aws
-  iterm
-  git
-)
+function init_elixir {
+  [[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex"
+}
 
-mydir=${0:a:h}
-for script in "${scripts[@]}"
-do
-  # echo 'sourcing ' "${script}"
-  source ${mydir}/${script}
-done
+alias load-elixir-env='init_elixir'
+alias kupdate='kiex selfupdate'

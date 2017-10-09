@@ -1,10 +1,10 @@
 [user]
-  name = Patrick Laplante
-  email = laplante.patrick@gmail.com
+	name = Patrick Laplante
+	email = laplante.patrick@gmail.com
 
 [core]
-  excludesfile = /Users/pat/.gitignore_global
-  autocrlf = input
+	excludesfile = /Users/pat/.gitignore_global
+	autocrlf = input
 
 [diff]
 	tool = diffmerge
@@ -12,69 +12,60 @@
 [merge]
 	tool = diffmerge
 
-[difftool "sourcetree"]
-  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-  trustExitCode = true
-  path = 
-
-[mergetool "sourcetree"]
-  cmd = /Users/pat/Desktop/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-  trustExitCode = true
-
 [alias]
-  lg1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%cr)%C(reset) %C(white)%s%C(reset) %C(bold white)â€” %cn%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
-  lg2 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%cD%C(reset) %C(bold green)(%cr)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)â€” %cn%C(reset)' --abbrev-commit
-  lg = !"git lg1"
-  dname = diff --name-only origin
-  undocommit = reset HEAD~1
-  oldiff = diff --name-status
-  st = status
-  ci = commit
-  br = branch
-  co = checkout
-  df = diff
-  dc = diff --cached
-  lg = log -p
-  lol = log --graph --decorate --pretty=oneline --abbrev-commit
-  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-  ls = ls-files
-  logsinglefile = log --follow
-  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
-  type = cat-file -t
-  dump = cat-file -p
-  genignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
-	alias = config --get-regexp ^alias\\.
-	 ec = config --global -e
-	 up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+	lg1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%cr)%C(reset) %C(white)%s%C(reset) %C(bold white)â€” %cn%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+	lg2 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%cD%C(reset) %C(bold green)(%cr)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)â€” %cn%C(reset)' --abbrev-commit
+	lg = !"git lg1"
+	dname = diff --name-only origin
+	undocommit = reset HEAD~1
+	oldiff = diff --name-status
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+	dc = diff --cached
+	lg = log -p
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	ls = ls-files
+	logsinglefile = log --follow
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+	genignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+	#alias = config --get-regexp ^alias\\.  Tripping zsh github plugin for some reason.
+	ec = config --global -e
+	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
 
 [color]
-  ui = auto
+	ui = auto
 
 [color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
+	current = yellow reverse
+	local = yellow
+	remote = green
 
 [color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
 
 [color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
+	added = yellow
+	changed = green
+	untracked = cyan
 
 [push]
-  default = matching
+	default = matching
 
 [difftool]
-  prompt = false
+	prompt = false
 
 [filter "media"]
-  clean = git-media-clean %f
-  smudge = git-media-smudge %f
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
 [commit]
 	template = /Users/pat/.stCommitMsg
 [difftool "diffmerge"]

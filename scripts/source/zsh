@@ -1,0 +1,18 @@
+
+export ZSH_CUSTOM=${omz_custom_location}
+export ZSH=${ohmyzsh_location}
+
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*:descriptions' format '%B%d%b'
+zstyle ':completion:*:messages' format '%d'
+zstyle ':completion:*:warnings' format 'No matches for: %d'
+zstyle ':completion:*' group-name''
+
+[ -e "${enki_location}/.zsh_aliases" ] && source "${enki_location}/.zsh_aliases"
+[ -e "${enki_location}/.zshrc_local" ] && source "${enki_location}/.zshrc_local"
+
+[[ -z $ZSH_THEME ]] && ZSH_THEME="bullet-train" #"apheleia"
+plugins=(git osx git-flow git-hubflow github history lol node rsync thefuck xcode zsh_reload)
+# plugins=($plugins $project_plugins)
+
+[ -e "$ZSH/oh-my-zsh.sh" ] && source "$ZSH/oh-my-zsh.sh"

@@ -18,3 +18,4 @@ alias ll='gls ${LS_OPTIONS} --group-directories-first -lhF'
 alias l='gls ${LS_OPTIONS} --group-directories-first -lAhF'
 alias c="clear"
 alias e="exit"
+

@@ -6,7 +6,25 @@
 #  > BoneCrusher <
 # -----------------------------------------------------------------------------
 
+# You have to use npm to install npm, and that will give you the
+# completionaphe.sh file you need.
+#source /opt/local/lib/node_modules/npm/lib/utils/completion.sh
+
+
 alias list-outdated-npm-packages='npm outdated -g --depth=0'
 alias update-all-npm-packages='npm update -g'
 alias ng="npm list -g --depth=0 2>/dev/null"
 alias nlf="npm list --depth=0 2>/dev/null"
+
+function init_nvm {
+  export NVM_DIR="$HOME/.nvm"
+  . "/usr/local/opt/nvm/nvm.sh"
+
+  ###-tns-completion-start-###
+  if [ -f /Users/pat/.tnsrc ]; then 
+      source /Users/pat/.tnsrc 
+  fi
+  ###-tns-completion-end-###
+}  
+
+alias load-node-env='init_nvm'
