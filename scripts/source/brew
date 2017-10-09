@@ -19,3 +19,8 @@ eval $(thefuck --alias)
 alias t='tree -L'
 
 alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
+
+alias bsstart='brew services start'
+alias bsstop='brew services stop'
+alias bslist='brew services list'
+alias bsrestart='brew services restart'

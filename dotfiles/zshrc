@@ -34,10 +34,6 @@ promptinit
 
 source ${enki_location}/scripts/source/source_my_scripts
 
-# export PATH=/Users/patricklaplante/Downloads/dotnet-dev-osx-x64.latest:/usr/local/share/dotnet/shared/Microsoft.NETCore.App/1.0.0-rc2-3002700:/usr/local/share/dotnet/bin:/Users/patricklaplante/.dnx/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/patricklaplante/.aphelia2/scripts/common:/Users/patricklaplante/.vimpkg/bin
-
-# export PATH=/Users/patricklaplante/Downloads/dotnet-dev-osx-x64.latest:/usr/local/share/dotnet/shared/Microsoft.NETCore.App/1.0.0-rc2-3002700:/usr/local/share/dotnet/bin:/Users/patricklaplante/.dnx/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/patricklaplante/.aphelia2/scripts/common:/Users/patricklaplante/.vimpkg/bin:/Users/patricklaplante/.vimpkg/bin
-
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
@@ -49,7 +45,6 @@ alias mmv='noglob zmv -W'
 
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-export PATH=$PATH:/usr/local/share/dotnet
 
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
@@ -63,3 +58,4 @@ alias npm-exec='PATH=$(npm bin):$PATH'
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
+export PATH="/usr/local/sbin:$PATH"
