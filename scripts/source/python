@@ -6,32 +6,16 @@
 #  > BoneCrusher <
 # -----------------------------------------------------------------------------
 
-scripts=(
-  brew
-  zsh
-  enki
-  core_utils
-  vscode
-  vim
-  aspnet
-  better_ls
-  goenv
-  jenv
-  rbenv
-  ssh
-  node
-  elixir
-  aws
-  iterm
-  git
-  android
-  react-native
-  python
-)
+# brew install python first
+# pip install virtualenvwrapper
 
-mydir=${0:a:h}
-for script in "${scripts[@]}"
-do
-  # echo 'sourcing ' "${script}"
-  source ${mydir}/${script}
-done
+
+function init_pyenv {
+  export PATH=/usr/local/opt/python/libexec/bin:$PATH
+
+  export WORKON_HOME=~/.penvs
+  source /usr/local/bin/virtualenvwrapper.sh
+}
+
+alias load-python-env='init_pyenv'
+alias list-python-packages='lssitepackages'

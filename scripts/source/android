@@ -6,32 +6,11 @@
 #  > BoneCrusher <
 # -----------------------------------------------------------------------------
 
-scripts=(
-  brew
-  zsh
-  enki
-  core_utils
-  vscode
-  vim
-  aspnet
-  better_ls
-  goenv
-  jenv
-  rbenv
-  ssh
-  node
-  elixir
-  aws
-  iterm
-  git
-  android
-  react-native
-  python
-)
+function init_android {
+  export ANDROID_SDK_ROOT=/Users/pat/Library/Android/sdk
+  export ANDROID_HOME=/Users/pat/Library/Android/sdk
+  export PATH=$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
+}
 
-mydir=${0:a:h}
-for script in "${scripts[@]}"
-do
-  # echo 'sourcing ' "${script}"
-  source ${mydir}/${script}
-done
+alias load-android-env='load-java-env && init_android'
+alias load-n6p-emu='$ANDROID_SDK_ROOT/emulator/emulator @Nexus_6P_API_26'

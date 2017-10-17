@@ -9,3 +9,4 @@ export ohmyzsh_location=${enki_location}/.oh-my-zsh
 
 source ${enki_location}/scripts/source/source_my_scripts
 
+load-node-env
