@@ -32,3 +32,7 @@ plugins=(git osx git-flow git-hubflow github history lol node rsync thefuck xcod
 # plugins=($plugins $project_plugins)
 
 [ -e "$ZSH/oh-my-zsh.sh" ] && source "$ZSH/oh-my-zsh.sh"
+
+# For tldr to work, I have to unalias it since something
+# in oh-my-zsh is aliasing it to less
+unalias tldr
