@@ -27,6 +27,7 @@ scripts=(
   android
   react-native
   python
+  tiny-care-terminal
 )
 
 mydir=${0:a:h}
