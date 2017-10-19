@@ -36,3 +36,5 @@ plugins=(git osx git-flow git-hubflow github history lol node rsync thefuck xcod
 # For tldr to work, I have to unalias it since something
 # in oh-my-zsh is aliasing it to less
 unalias tldr
+
+alias reload='source ~/.zshrc'

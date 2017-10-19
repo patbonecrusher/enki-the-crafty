@@ -1,3 +1,8 @@
 
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
+clonefork() {
+  hub clone "$1"
+  cd "${1##*/}"
+  hub fork
+}
