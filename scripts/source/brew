@@ -30,3 +30,5 @@ alias bsrestart='brew services restart'
 # This is a zsh feature
 autoload -U zmv
 alias mmv='noglob zmv -W'
+
+alias mancy='/Applications/Mancy.app/Contents/MacOS/Mancy'

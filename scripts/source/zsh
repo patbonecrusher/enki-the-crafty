@@ -11,16 +11,17 @@ zstyle ':completion:*' group-name''
 [ -e "${enki_location}/.zsh_aliases" ] && source "${enki_location}/.zsh_aliases"
 [ -e "${enki_location}/.zshrc_local" ] && source "${enki_location}/.zshrc_local"
 
+export BULLETTRAIN_DIR_EXTENDED=0
 export BULLETTRAIN_PROMPT_ORDER=(
   time
   status
   custom
-  context
+#  context
   dir
   perl
   virtualenv
   nvm
-  aws
+#  aws
   go
   elixir
   git
