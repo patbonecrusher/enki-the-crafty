@@ -18,7 +18,7 @@ function init_tct {
   export TTC_SAY_BOX='parrot'
   
   # List of folders to look into for `git` commits, comma separated.
-  export TTC_REPOS='~/Projects/pharos'
+  export TTC_REPOS='~/Projects'
 
   # The max directory-depth to look for git repositories in
   # the directories defined with `TTC_REPOS`. Note that the deeper

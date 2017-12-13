@@ -11,4 +11,4 @@ source ${enki_location}/scripts/source/source_my_scripts
 
 load-node-env
 
-export PATH=/Users/pat/.nvm/versions/node/v9.3.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/pat/.vimpkg/bin
+export JENKINS_CREDS=plaplante:410b7e7a847169abd33394a6e600721d
