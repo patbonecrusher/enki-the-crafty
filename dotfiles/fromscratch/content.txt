@@ -1,0 +1,10 @@
+|> Welcome to FromScratch.
+
+
+This app saves everything you type automatically, there's no need to save manually.
+
+You can type neat arrows like these: ->, -->, ->> and =>, courtesy of the font "Fira Code".
+
+	FromScratch also does automatic indenting
+	and more. So delete this text & let's go!
+	
