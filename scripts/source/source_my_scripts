@@ -8,6 +8,7 @@
 
 scripts=(
   brew
+  iterm
   zsh
   enki
   core_utils
@@ -22,7 +23,6 @@ scripts=(
   node
   elixir
   aws
-  iterm
   git
   android
   react-native

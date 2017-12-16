@@ -26,6 +26,16 @@ function init_nvm {
       source /Users/pat/.tnsrc 
   fi
   ###-tns-completion-end-###
+
+  # export BULLETTRAIN_PROMPT_ORDER=(
+  #   time
+  #   status
+  #   dir
+  #   nvm
+  #   aws
+  #   git
+  #   cmd_exec_time
+  # )  
 }  
 
 alias load-node-env='init_nvm'

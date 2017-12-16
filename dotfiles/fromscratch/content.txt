@@ -1,10 +1,49 @@
-|> Welcome to FromScratch.
-
-
-This app saves everything you type automatically, there's no need to save manually.
-
-You can type neat arrows like these: ->, -->, ->> and =>, courtesy of the font "Fira Code".
-
-	FromScratch also does automatic indenting
-	and more. So delete this text & let's go!
+|> Build suggestion/wishes
+	It should be dead simple for the end user (ie the developers) KISS
+	It should reduce the risk for manual errors
+	It should be automated as much as possible
 	
+	Developers should not have to browse to the selected build tool to create a job for their project master and/or specific branch name
+	
+	Developers should not have to browse to the selected build tool to fire a build job.
+
+	Developers should not have to browse to the selected build tool to fire a deploy job.
+
+|> My current build solution:
+	-> Not having to create job manually
+		When creating a new container service, I don't want to have to go to jenkins or team city or whatever to create a build job.  There should be a way where it is created automatically for me when I either start my micro service or the first time I try to create the container and upload it.
+	
+	-> Not having to fire job manually
+		This should be automatic.   Either via a repo change, or a manual request via dev tool (or script).  For instance, most of the service I worked on can be build and deploy via one command line:
+		$ npm publish:minor (runs test locally, check for security issues, tag and push)
+		$ npm jenkins:build (fires the build job for the project on jenkins
+		$ npm jenkins:deploy -f CI (deploy to CI).
+		
+		This could be build tech agnostic and we could have plugins for our fav IDE to publish, build and deploy.
+		
+		
+|> brew install yarn --without-node
+
+|> In project (https://medium.com/london-nodejs/useful-tools-for-your-node-js-projects-20fd1f7c860a)
+	-> Add code coverage
+	-> Ensure tests are provided
+	-> add Notes to dump todos
+	-> npm-check to see what is used or not
+	-> npm-dview/david to output dependencies
+	-> jshint (doesn't work well with es7-8, async)
+	
+	
+|> knowledge base
+	https://hackernoon.com/building-a-open-source-personal-knowledge-base-45c25f5a4324
+	https://app.nuclino.com/signup
+	https://www.notion.so/ (google signup)
+	http://www.xwiki.org/xwiki/bin/view/Main/WebHome
+	https://plone.org/ (http://demo.plone.de/en)
+	https://wiki.js.org/ (based on node and git)
+	
+	
+	
+mongodb://cocmaster:xrwCPUepyvMDQgTZRjBroaT2@mycluster0-shard-00-00-wpeiv.mongodb.net:27017/wiki?ssl=true&replicaSet=Mycluster0-shard-0&authSource=admin
+
+
+mongodb://cocmaster:xrwCPUepyvMDQgTZRjBroaT2@cluster0-shard-00-00-icwgj.mongodb.net:27017,cluster0-shard-00-01-icwgj.mongodb.net:27017,cluster0-shard-00-02-icwgj.mongodb.net:27017/wiki?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin
