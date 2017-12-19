@@ -6,3 +6,5 @@ clonefork() {
   cd "${1##*/}"
   hub fork
 }
+
+alias git=hub
