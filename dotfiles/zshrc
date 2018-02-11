@@ -12,3 +12,23 @@ source ${enki_location}/scripts/source/source_my_scripts
 load-node-env
 
 export JENKINS_CREDS=plaplante:410b7e7a847169abd33394a6e600721d
+
+# fortune | cowsay | lolcat
+archey
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/pat/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/pat/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/pat/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/pat/node_modules/tabtab/.completions/sls.zsh
+
+# Enables us to have .envrc file with specific env variable in a folder
+eval "$(direnv hook zsh)"
+
+# `v` is already mapped to visual mode, so we need to use a different key to
+# open Vim
+bindkey -v
+bindkey -M vicmd "^V" edit-command-line
+
+export PATH=~/Library/Python/2.7/bin:$PATH

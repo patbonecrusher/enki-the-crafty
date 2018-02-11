@@ -1,3 +1,5 @@
+Solange Roy: 450-468-8109 ext: 86166
+
 |> Build suggestion/wishes
 	It should be dead simple for the end user (ie the developers) KISS
 	It should reduce the risk for manual errors
@@ -21,8 +23,35 @@
 		
 		This could be build tech agnostic and we could have plugins for our fav IDE to publish, build and deploy.
 		
-		
-|> brew install yarn --without-node
+Add a current state endpoint to both aggregator 
+
+http://patlaplante.com.cutestat.com/ -- cute
+
+|> Computer setup:
+	-> brew install yarn --without-node -- node package manager alternative
+	-> brew cask install launchrocket -- show brew services in pref pane
+	-> brew cask install sequel-pro -- sequel database tool
+	-> brew cask install tad -- csv file viewer
+	-> brew cask install spectacle -- window positioning tool
+	-> brew cask install appcleaner -- to uninstall shit thorouly
+	-> brew cask install knockknock -- to audit for installed software/malware
+	-> brew cask install taskexplorer -- to visually explore all running tasks (processes)b
+	-> brew cask install quicklook-json -- to view json when hitting spacebar in finder
+	-> download lifeboat -- docker-compose gui
+	-> download udeler -- udemy class downloader
+	-> download mongodb-compass
+	-> brew install ncdu -- disk usage!!! AWESOME
+	-> brew install tig -- curses git repo browser
+	-> brew install aws-shell -- to navigate aws
+	-> brew install ddockutil -- must have to configure the dock
+	-> brew install mc -- midnight commender
+	-> brew install whatmask -- ipv4 subnet calculator
+	-> brew install ipcalc -- ipv4 stuff
+
+|> References:
+	-> https://commandlinepoweruser.com/ -- zsh videos
+	-> https://www.gatsbyjs.org/ -- react to stati pages.
+	-> https://hackernoon.com/a-crash-course-on-serverless-with-node-js-632b37d58b44 serverless
 
 |> In project (https://medium.com/london-nodejs/useful-tools-for-your-node-js-projects-20fd1f7c860a)
 	-> Add code coverage
@@ -31,7 +60,28 @@
 	-> npm-check to see what is used or not
 	-> npm-dview/david to output dependencies
 	-> jshint (doesn't work well with es7-8, async)
+	-> cost-of-modules show how big is a package
+	-> license-checker 
+	-> Tldrlegal advise about licenses included
+	-> npm-check
+	-> npm ls caniuse-lite # or other package to view who depends on what
+	-> (like artillery) -- autocannon -c 1 -d 60 http://localhost:9000/ContainerServiceRecyclers/config
+	-> Sonar linter -- better linter
 	
+Upcoming scifi movie: https://www.youtube.com/watch?v=6wjxrWwm5BE
+
+
+	
+|> Apps to buy / wwawtch
+	-> https://aria2.github.io/ batch file downloader
+	-> https://www.focusatwill.com/?discount_code=2-week-free-trial&utm_source=invite&utm_medium=link&utm_campaign=saasquatch&rsCode=VERONIKACHEPLYG&rsShareMedium=DIRECT&rsEngagementMedium=EMBED
+	-> https://www.binaryage.com/
+	->> anything from https://objective-see.com/products.html
+ 	-> https://mac.eltima.com/elmediaplayer.html?utm_source=Google&utm_campaign=media-player
+	-> https://itunes.apple.com/us/app/noizio/id928871589
+    -> brew cask install beaker-browser -- p2p browser
+	-> https://itunes.apple.com/us/app/spectrum/id518156125?mt=12 -- color palette
+	-> https://github.com/gurayyarar/NodeJsPackageManager
 	
 |> knowledge base
 	https://hackernoon.com/building-a-open-source-personal-knowledge-base-45c25f5a4324
@@ -41,9 +91,287 @@
 	https://plone.org/ (http://demo.plone.de/en)
 	https://wiki.js.org/ (based on node and git)
 	
+React component
+http://bluekit.blueberry.io/ or storyboard
+
+Apple view subscription: https://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/DirectAction/manageSubscriptions
 	
+mongorestore —db ebsi dump/ab0e190c65c74f34afc932aa527df62a
+
+mongodump --host mongodb6.back4app.com --ssl --username admin --password ErxHNHHEa89IkZsjRA3OG9Ca --db ab0e190c65c74f34afc932aa527df62a
+mongodump --host mongodb6.back4app.com --ssl --username admin --password ErxHNHHEa89IkZsjRA3OG9Ca --db ab0e190c65c74f34afc932aa527df62a -c EBPhoto
+
+laplante.patrick@gmail.com
+mongodb://admin:ErxHNHHEa89IkZsjRA3OG9Ca@mongodb6.back4app.com:27017/ab0e190c65c74f34afc932aa527df62a?ssl=true
+AKIAJ6SNUNX6LWIGCTEA
+sHnfpiSvqbcKHKIcp7dlLBTC1iTXXbH0MuBQZebw
+
+
+https://mv.sashido.io/
+pat
+	back4app
+		mongodb://admin:cIwFQybK3SW5dcts7MQEZ8Ry@mongodb7.back4app.com:27017/6a8ff3c494144ffb86e161c64bd277a6?ssl=true
+		mongodump --host mongodb7.back4app.com --ssl --username admin --password cIwFQybK3SW5dcts7MQEZ8Ry --db 6a8ff3c494144ffb86e161c64bd277a6
+		mongorestore --host mongodb7.back4app.com --ssl --username admin --password cIwFQybK3SW5dcts7MQEZ8Ry --db 6a8ff3c494144ffb86e161c64bd277a6 ~/dump/ab0e190c65c74f34afc932aa527df62a
+	sashido
+		mongodb://user02381a:7816d0P3zHhvw0f889a@cluster-pgrs1002-0-us-east-1-scalabledbs.cloudstrap.io:29002,cluster-pgrs1002-1-us-east-1-scalabledbs.cloudstrap.io:29002,cluster-pgrs1002-2-us-east-1-scalabledbs.cloudstrap.io:29002/pg-app-2-us-qs5fvdb3e36zwkyepl8rt7zaez0ty5?replicaSet=pgrs1002&ssl=true
+
+mongodump --host cluster-pgrs1002-0-us-east-1-scalabledbs.cloudstrap.io --port 29002 --ssl --username user02381a --password 7816d0P3zHhvw0f889a --db pg-app-2-us-qs5fvdb3e36zwkyepl8rt7zaez0ty5
+
+mongorestore --host cluster-pgrs1002-0-us-east-1-scalabledbs.cloudstrap.io --port 29002 --ssl --username user02381a --password 7816d0P3zHhvw0f889a --db pg-app-2-us-qs5fvdb3e36zwkyepl8rt7zaez0ty5 ~/dump/ab0e190c65c74f34afc932aa527df62a
+
+mongoexport --host cluster-pgrs1002-0-us-east-1-scalabledbs.cloudstrap.io --port 29002 --ssl --username user02381a --password 7816d0P3zHhvw0f889a --db pg-app-2-us-qs5fvdb3e36zwkyepl8rt7zaez0ty5 -c EBPhoto > EBPhoto.json --jsonArray
+
+## This is the aws ebsi db
+## -----------------------
+mongorestore --host cluster0-shard-00-00-lyqqs.mongodb.net --port 27017 --ssl --username ebsiaws --password ILcIa24v6L7hhvwW --db EBSIAWSParseDB ./dump/ab0e190c65c74f34afc932aa527df62a
+
+mongorestore --uri "mongodb://ebsiaws:ILcIa24v6L7hhvwW@cluster0-shard-00-00-lyqqs.mongodb.net:27017,cluster0-shard-00-01-lyqqs.mongodb.net:27017,cluster0-shard-00-02-lyqqs.mongodb.net:27017/EBSIAWSParseDB?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin"
+## -----------------------
+
+mongodb://ebsiaws:<PASSWORD>@cluster0-shard-00-00-lyqqs.mongodb.net:27017,cluster0-shard-00-01-lyqqs.mongodb.net:27017,cluster0-shard-00-02-lyqqs.mongodb.net:27017/admin?replicaSet=Cluster0-shard-0&ssl=true
+
+jim 
+	back4app
+		mongodump --host mongodb6.back4app.com --ssl --username admin --password ErxHNHHEa89IkZsjRA3OG9Ca --db ab0e190c65c74f34afc932aa527df62a
+
+mongodb://userf07172:989120Rjafq2E1d5190@cluster-pgrs1000-0-us-east-1-scalabledbs.cloudstrap.io:29000,cluster-pgrs1000-1-us-east-1-scalabledbs.cloudstrap.io:29000,cluster-pgrs1000-2-us-east-1-scalabledbs.cloudstrap.io:29000/pg-app-2-us-rrgtjyh5u7o4za1risrsailey40d74?replicaSet=pgrs1000&ssl=true
+
+mongodb://userf07172:989120Rjafq2E1d5190@cluster-pgrs1000-0-us-east-1-scalabledbs.cloudstrap.io:29000,cluster-pgrs1000-1-us-east-1-scalabledbs.cloudstrap.io:29000,cluster-pgrs1000-2-us-east-1-scalabledbs.cloudstrap.io:29000/pg-app-2-us-rrgtjyh5u7o4za1risrsailey40d74?replicaSet=pgrs1000&ssl=true
+
+mongodb://userf07172:989120Rjafq2E1d5190@cluster-pgrs1000-0-us-east-1-scalabledbs.cloudstrap.io:29000,cluster-pgrs1000-1-us-east-1-scalabledbs.cloudstrap.io:29000,cluster-pgrs1000-2-us-east-1-scalabledbs.cloudstrap.io:29000/pg-app-2-us-rrgtjyh5u7o4za1risrsailey40d74?replicaSet=pgrs1000&ssl=true
+
+mongodump --host cluster-pgrs1000-0-us-east-1-scalabledbs.cloudstrap.io --port 29000 --ssl --username userf07172 --password 989120Rjafq2E1d5190 --db pg-app-2-us-rrgtjyh5u7o4za1risrsailey40d74
+
+mongorestore --host cluster-pgrs1000-0-us-east-1-scalabledbs.cloudstrap.io --port 29000 --ssl --username userf07172 --password 989120Rjafq2E1d5190 --db pg-app-2-us-rrgtjyh5u7o4za1risrsailey40d74 ~/dump/ab0e190c65c74f34afc932aa527df62a
+
+		mongorestore --host cluster-pgrs1000-0-us-east-1-scalabledbs.cloudstrap.io \
+			--port 29000 \
+			--ssl --username userf07172 --password 989120Rjafq2E1d5190 --db pg-app-2-us-rrgtjyh5u7o4za1risrsailey40d74 ~/dump/ab0e190c65c74f34afc932aa527df62a
+
 	
 mongodb://cocmaster:xrwCPUepyvMDQgTZRjBroaT2@mycluster0-shard-00-00-wpeiv.mongodb.net:27017/wiki?ssl=true&replicaSet=Mycluster0-shard-0&authSource=admin
-
-
 mongodb://cocmaster:xrwCPUepyvMDQgTZRjBroaT2@cluster0-shard-00-00-icwgj.mongodb.net:27017,cluster0-shard-00-01-icwgj.mongodb.net:27017,cluster0-shard-00-02-icwgj.mongodb.net:27017/wiki?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin
+
+TODO:
+  Setup two-factor auth with github
+  Read on Celery js
+  Read on flutter for mobile development
+
+
+|> Good anime:
+	Kara no Kyoukai
+	My neighbor totoro
+	Wolfchildren
+	Summer Wars
+	Brave Story
+	Space Pirate Captain Harlock
+	The Cat Returns
+	The Garden Of Words
+	The Girl Who Leapt Through Time
+	The place Promised In Our Early Days
+	5 Centimeters Per Second
+	Ghost in The Shell
+	
+  
+/Users/pat/Library/LaunchAgents
+
+--------
+
+https://medium.com/@yongliu/how-to-build-an-efficient-personal-knowledge-management-system-355332ae5991
+
+credstash -t CI.Credentials setup
+credstash -t CI.Credentials put foo baz -v
+http://mbostock.github.io/d3/talk/20111018/tree.html
+
+learning stuff:
+	css:
+		http://ryanogles.by/css/javascript/2017/05/25/the-state-of-css.html?utm_source=frontendfocus&utm_medium=email
+	ios:
+		https://littlebitesofcocoa.com/309-uifontmetrics?utm_campaign=iOS%2BDev%2BWeekly&utm_medium=email&utm_source=iOS_Dev_Weekly_Issue_305
+		https://developer.apple.com/documentation/corenfc?changes=latest_minor
+	react:
+		https://www.codementor.io/radubrehar/thinking-in-react-8duata34n
+	react components:
+		https://hackernoon.com/building-a-react-component-library-part-3-adb2cd0e021c
+		https://hackernoon.com/building-a-react-component-library-part-2-46fd4f77bb5c
+		https://hackernoon.com/building-a-react-component-library-part-1-d8a1e248fe6c
+	graphql:
+		http://graphql.org/learn/pagination/
+		https://dev-blog.apollodata.com/full-stack-react-graphql-tutorial-582ac8d24e3b
+		http://graphql.org/
+		https://dev-blog.apollodata.com/tutorial-building-a-graphql-server-cddaa023c035
+		http://graphql.org/swapi-graphql/?query=%23%20Welcome%20to%20GraphiQL%0A%23%0A%23%20GraphiQL%20is%20an%20in-browser%20IDE%20for%20writing%2C%20validating%2C%20and%0A%23%20testing%20GraphQL%20queries.%0A%23%0A%23%20Type%20queries%20into%20this%20side%20of%20the%20screen%2C%20and%20you%20will%0A%23%20see%20intelligent%20typeaheads%20aware%20of%20the%20current%20GraphQL%20type%20schema%20and%0A%23%20live%20syntax%20and%20validation%20errors%20highlighted%20within%20the%20text.%0A%23%0A%23%20To%20bring%20up%20the%20auto-complete%20at%20any%20point%2C%20just%20press%20Ctrl-Space.%0A%23%0A%23%20Press%20the%20run%20button%20above%2C%20or%20Cmd-Enter%20to%20execute%20the%20query%2C%20and%20the%20result%0A%23%20will%20appear%20in%20the%20pane%20to%20the%20right.%0A%0A%7B%0A%20%20allFilms(first%3A2%20after%3A%22YXJyYXljb25uZWN0aW9uOjE%3D%22)%20%7B%0A%20%20%20%20totalCount%0A%20%20%20%20edges%20%7B%0A%20%20%20%20%20%20node%20%7B%0A%20%20%20%20%20%20%20%20id%0A%20%20%20%20%20%20%20%20title%0A%20%20%20%20%20%20%20%20director%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20cursor%0A%20%20%20%20%7D%0A%20%20%20%20pageInfo%20%7B%0A%20%20%20%20%20%20%20%20endCursor%0A%20%20%20%20%20%20%20%20hasNextPage%0A%20%20%20%20%20%20%7D%0A%20%20%7D%0A%7D&operationName=null
+		
+	Flutter
+		git clone -b alpha https://github.com/flutter/flutter.git
+		
+	preact-cli
+		/Users/pat/Projects/sandbox/my-great-app
+		
+	Reveal (presentation)
+		https://github.com/slara/generator-reveal
+		yo reveal:slide "This is my slide title" --markdown
+		/Users/pat/Projects/sandbox/revealtest
+		
+	es7 decorators
+		/Users/pat/Projects/learning/es6-decorators
+		
+	fable
+		/Users/pat/Projects/learning/fable
+		https://www.youtube.com/watch?v=iP-50fj06Eo
+		http://fable.io/
+	elixir
+		http://theerlangelist.com/article/why_elixir
+		https://elixir-lang.org/getting-started/introduction.html
+		https://github.com/ludo/programming-elixir-exercises/blob/master/first_steps/functions_3.exs
+		https://hackernoon.com/introduction-fe138ac6079d
+	flow type:
+		https://flow.org/en/docs/usage/
+		http://venckicode.blogspot.com/2016/12/optimizing-flow-using-it-with-vs-code.html
+		https://github.com/flowtype/flow-typed
+		https://www.saltycrane.com/blog/2016/06/flow-type-cheat-sheet/
+	sonarqube(lint):
+		./sonar.sh start
+ 		./sonar.sh status
+ 		cd sonar-scanning-examples-master
+ 		../sonar-scanner-3.0.3.778-macosx/bin/sonar-scanner
+ 		../sonar-scanner-3.0.3.778-macosx/bin/sonar-scanner -X
+ 		~/Downloads/sonar-scanner-3.0.3.778-macosx/bin/sonar-scanner
+		http://localhost:9000/about
+ 		vi sonar-project.properties
+			sonar.projectKey=help-portal
+			sonar.projectName=help-portal
+			sonar.projectVersion=1.0
+
+			sonar.swift.coverage.reportPath=Coverage.report
+			sonar.sources=src
+		
+
+https://github.com/diegomura/react-pdf?utm_source=reactnl&utm_medium=email
+http://cssinjs.org/react-jss?v=v6.1.1
+https://runkit.com/patbonecrusher/
+
+to install: 
+	https://github.com/cnstntn-kndrtv/open-in-buttons-for-finder-toolbar
+
+	demo on how to setup multi project with node npm
+
+Dave Corwin
+	Problem solver and full stack developer
+	I am a problem solver that enjoys using software to answer difficult questions and build creative solutions. I have a passion for both science and technology and use my varied background in software engineering, product development...
+
+	
+
+ebs:
+	think about the building of the code per project
+	wysywig and have the app update the server javascript ? 
+		move code in json file?
+	pdf kit lambda
+	demonstrate async await example
+	clear session on browser the close
+	session timeout in single page application
+	can you upload to ftp over vscode or a script
+	send example to pass env to webpack to use live vs sample db.
+
+
+To presentation:
+	add gulp, grunt, webpack
+	define more style/presentation from coding perspectives
+	localization different ways strings are stored.
+	add to the drawback list
+	slow pane: add runtime
+		risk of deploying because everybody is afraid of breaking something
+		add time to how long it takes to do a regression
+
+		add geo location cause frustration to developers because no code review
+
+
+tutorial to watch
+	https://github.com/straku/professor-frisby
+	
+	
+	
+report deployment to s3
+
+parse-dashboard --appId a3PjngX9q2BLbHsjCsfRtCb9GLewJtu15bSTFZEu --masterKey myverysecret --serverURL "http://ec2-54-157-33-96.compute-1.amazonaws.com/parse"
+
+WORK ON:
+ [ ] 1. (2 hours) AWS performance testing create a test table
+      objective-c test program
+      upload 100 pictures and download 100 photos
+      setup parse query limit to 1000
+      change to aws parse
+      upload/download them
+      use developer view controller
+ [x] 2. (1 hour) send notes on how to use npm link and library
+      provide - sample
+ [ ] 3. (2 hours) Re-org client index files to be resources
+      move each customer file as resources
+	  logistic how to upload javascript template (host gators)
+ [ ] 4. docx generation npm packages
+ 
+ [ ] Add this to dev notes: GitHub - tonsky/FiraCode: Monospaced font with programming ligatures
+
+
+
+
+
+
+
+Apps: 
+	Login portal per flavor
+
+    Administrative apps (Aaron and DSC)
+	    1 app for model quality (for aaron)
+	    1 app for system settings (DSC)
+
+	Account Profile app (Discover/Profile)
+		Details
+		License
+		User, Roles, Access
+
+	Discover app
+		Device scout
+		Print scout
+		Cost profiles
+		Device cost
+		Device inventory
+		
+	Fleet manager
+		Setup guide
+		Grids
+		
+	Print Analytics
+		Setup guide
+		Dashboard
+		
+	Secure print
+		Setup guide
+		Dashboard
+		Secure printers
+		Print scout
+
+	Fleet design
+		Dashboard
+		Designer
+		
+	Reports
+	
+Micro services: 
+	SSO micro-services
+
+
+/mps-base/consul-template -consul-addr consul:8500 -template /src/backend/config/config.template:./src/backend/config/config2.json -once
+            "name": "HelpPortal",
+
+// send the command
+aws ssm send-command --document-name "AWS-RunPowerShellScript" --comment "listing services" --instance-ids "i-0a1938c6199dcaaca" --parameters commands="Get-Service|select name\,displayname\,status|convertto-json -Compress" --region us-east-1 --output text
+
+// query the status
+aws ssm list-command-invocations --command-id "18f23748-0c4d-4212-8238-ca68d3b75347"
+
+// get the result
+aws ssm get-command-invocation --command-id "6353c223-5339-4370-90e4-13702fce4c63" --instance-id "i-0a1938c6199dcaaca"
+
+aws ssm send-command --document-name "AWS-RunShellScript" --comment "listing services" --instance-ids "i-02899de8a5b927c3d" --parameters commands="service --status-all" --region us-east-1 --output text
