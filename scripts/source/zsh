@@ -48,3 +48,9 @@ unalias tldr
 # }
 
 alias reload='source ~/.zshrc'
+autoload -U compinit
+compinit
+
+fpath=(/usr/local/lib/ruby/gems/2.5.0/gems/timetrap-1.15.1/completions/zsh $fpath)
+
+source /usr/local/share/zsh/site-functions

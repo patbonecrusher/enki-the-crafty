@@ -8,3 +8,4 @@ clonefork() {
 }
 
 alias git=hub
+alias gitzip="git archive HEAD -o "

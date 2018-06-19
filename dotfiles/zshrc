@@ -32,3 +32,14 @@ bindkey -v
 bindkey -M vicmd "^V" edit-command-line
 
 export PATH=~/Library/Python/2.7/bin:$PATH
+
+export PATH=/Users/pat/.kiex/elixirs/elixir-1.6.1/bin:/Users/pat/.kiex/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
+# Hook for desk activation
+[ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
+
+# tabtab source for electron-forge package
+# uninstall by removing these lines or running `tabtab uninstall electron-forge`
+[[ -f /Users/pat/.nvm/versions/node/v9.5.0/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /Users/pat/.nvm/versions/node/v9.5.0/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh
+
+export PATH="$HOME/.fastlane/bin:$PATH"
