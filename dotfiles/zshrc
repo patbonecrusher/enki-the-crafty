@@ -43,3 +43,5 @@ export PATH=/usr/local/sbin:$PATH
 [[ -f /Users/pat/.nvm/versions/node/v9.5.0/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /Users/pat/.nvm/versions/node/v9.5.0/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh
 
 export PATH="$HOME/.fastlane/bin:$PATH"
+
+[ -s "/Users/pat/.jabba/jabba.sh" ] && source "/Users/pat/.jabba/jabba.sh"
