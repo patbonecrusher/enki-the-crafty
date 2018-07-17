@@ -28,6 +28,7 @@ scripts=(
   react-native
   python
   tiny-care-terminal
+  tmux
 )
 
 mydir=${0:a:h}

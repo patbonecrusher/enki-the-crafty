@@ -6,6 +6,8 @@
 	<false/>
 	<key>AllowClipboardAccess</key>
 	<true/>
+	<key>AlternateMouseScroll</key>
+	<true/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
 	<key>AppleScrollAnimationEnabled</key>
@@ -43862,19 +43864,19 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>650 589 620 392 0 0 1920 1178 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>269 126 606 469 0 0 1920 1178 </string>
+	<string>269 128 606 469 0 0 1920 1200 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>88 641 958 451 0 0 1920 1178 </string>
+	<string>756 467 1018 447 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>5 195 1739 792 0 0 1920 1178 </string>
+	<string>40 690 570 402 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1 371 983 807 0 0 1920 1178 </string>
+	<string>1005 626 570 402 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>241 521 1564 657 0 0 1920 1178 </string>
+	<string>6 225 997 912 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>146 208 1088 927 0 0 1920 1178 </string>
+	<string>556 23 1361 1155 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>681 295 1074 844 0 0 1920 1178 </string>
+	<string>681 626 570 402 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
 	<string>331 40 864 912 0 0 1920 1178 </string>
 	<key>New Bookmarks</key>
@@ -47168,6 +47170,8 @@
 	<string>/Users/pat/.enki/iterm</string>
 	<key>Print In Black And White</key>
 	<true/>
+	<key>QuitWhenAllWindowsClosed</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -47177,7 +47181,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-05-22T01:56:52Z</date>
+	<date>2018-07-12T01:46:05Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -47191,7 +47195,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.1.6</string>
+	<string>3.1.7</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
