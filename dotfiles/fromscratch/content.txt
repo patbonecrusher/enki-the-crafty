@@ -56,3 +56,23 @@ Masterbranch but it seems sadly in standby (or dead?) since its main actors were
 Coderwall more focused on developers and teams
 Open Source Software Directory (only a search tool)
 The Free Software Directory (wiki)
+
+Black duck
+	HUB is the black solution (portal?)
+	  scan client (secure hashes and fingerprint), web portal, knowledge base
+	  match the security risks, and version information risks
+
+	scan all language
+	can be saas (we are not interested)
+	produce BIL
+	produce a license risk
+
+	confidence factor?  no way to reach 100% guarantee, black duck is the longest.
+	team on the backend that will fix false negative or false positive
+
+	can generate the notices file (the report)  would be the deliverabe the customer wants to see
+	Policy management (can be setup to notify anybody when a policy is violated)''
+
+	Annual subscription
+	  - based on the amount of code.
+	  - around 3-5-7 56k annually.

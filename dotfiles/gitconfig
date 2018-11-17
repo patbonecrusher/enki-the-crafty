@@ -67,7 +67,7 @@
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
 [commit]
-	template = /Users/pat/.stCommitMsg
+	# template = /Users/pat/.stCommitMsg
 [difftool "diffmerge"]
 	cmd = /usr/local/bin/diffmerge \"$LOCAL\" \"$REMOTE\"
 [mergetool "diffmerge"]

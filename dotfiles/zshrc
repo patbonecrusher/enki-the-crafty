@@ -14,7 +14,7 @@ load-node-env
 export JENKINS_CREDS=plaplante:410b7e7a847169abd33394a6e600721d
 
 # fortune | cowsay | lolcat
-archey
+#archey
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
@@ -45,3 +45,13 @@ export PATH=/usr/local/sbin:$PATH
 export PATH="$HOME/.fastlane/bin:$PATH"
 
 [ -s "/Users/pat/.jabba/jabba.sh" ] && source "/Users/pat/.jabba/jabba.sh"
+
+export PATH="/Users/pat/.pyenv:$PATH"
+eval "$(pyenv init -)"
+
+. /Users/pat/.nix-profile/etc/profile.d/nix.sh
+if which swiftenv > /dev/null; then eval "$(swiftenv init -)"; fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/pat/.sdkman"
+[[ -s "/Users/pat/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/pat/.sdkman/bin/sdkman-init.sh"
