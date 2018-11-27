@@ -6,7 +6,7 @@
 #  > BoneCrusher <
 # -----------------------------------------------------------------------------
 
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 
 alias brew-check-update='brew bundle check'
 alias brew-do-update='brew bundle cleanup'

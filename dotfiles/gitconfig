@@ -1,6 +1,6 @@
 [user]
-  name = Patrick Laplante
-  email = laplante.patrick@gmail.com
+	name = Patrick Laplante
+	email = laplante.patrick@gmail.com
 
 [core]
   excludesfile = /Users/patricklaplante/.gitignore_global
@@ -72,3 +72,8 @@
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
