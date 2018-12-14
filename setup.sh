@@ -56,3 +56,6 @@ done
 
 # setup_ohmyzsh ${mydir}
 # setup_dotfiles ${mydir}/dotfiles ${mydir}/..
+
+# get https://github.com/github/hub/releases
+# sudo prefix=/usr/local ./install

@@ -27,7 +27,7 @@ scripts=(
   node
 #  elixir
 #  aws
-#  git
+  git
 #  android
 #  react-native
 #  tiny-care-terminal
