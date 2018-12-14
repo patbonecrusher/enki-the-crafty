@@ -45,5 +45,14 @@ function setup_dotfiles ()
   done
 }
 
-setup_ohmyzsh ${mydir}
-setup_dotfiles ${mydir}/dotfiles ${mydir}/..
+git clone https://github.com/floor114/zsh-apple-touchbar ${mydir}/.zsh-apple-touchbar
+
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+
+# setup_ohmyzsh ${mydir}
+# setup_dotfiles ${mydir}/dotfiles ${mydir}/..

@@ -1,7 +1,4 @@
 
-export ZSH_CUSTOM=${omz_custom_location}
-export ZSH=${ohmyzsh_location}
-
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*:descriptions' format '%B%d%b'
 zstyle ':completion:*:messages' format '%d'
@@ -11,36 +8,11 @@ zstyle ':completion:*' group-name''
 [ -e "${enki_location}/.zsh_aliases" ] && source "${enki_location}/.zsh_aliases"
 [ -e "${enki_location}/.zshrc_local" ] && source "${enki_location}/.zshrc_local"
 
-export BULLETTRAIN_CONTEXT_DEFAULT_USER=pat
-export BULLETTRAIN_DIR_EXTENDED=0
-export BULLETTRAIN_PROMPT_ORDER=(
-  time
-  status
-  custom
-  context
-  dir
-  # perl
-  # virtualenv
-  nvm
-  aws
-  # go
-  # elixir
-  git
-  cmd_exec_time
-)
 
-# setopt PROMPT_SUBST
-# export BULLETTRAIN_PROMPT_CHAR="%{$(iterm2_prompt_mark)%} \$"
-
-[[ -z $ZSH_THEME ]] && ZSH_THEME="bullet-train" #"apheleia"
-plugins=(git osx git-flow git-hubflow github history lol node rsync thefuck xcode zsh_reload)
-# plugins=($plugins $project_plugins)
-
-[ -e "$ZSH/oh-my-zsh.sh" ] && source "$ZSH/oh-my-zsh.sh"
 
 # For tldr to work, I have to unalias it since something
 # in oh-my-zsh is aliasing it to less
-unalias tldr
+#unalias tldr
 
 # TMOUT=1
 # TRAPALRM() {
@@ -51,6 +23,13 @@ alias reload='source ~/.zshrc'
 autoload -U compinit
 compinit
 
-fpath=(/usr/local/lib/ruby/gems/2.5.0/gems/timetrap-1.15.1/completions/zsh $fpath)
+#fpath=(/usr/local/lib/ruby/gems/2.5.0/gems/timetrap-1.15.1/completions/zsh $fpath)
 
 source /usr/local/share/zsh/site-functions
+
+bindkey -M vicmd '?' history-incremental-search-backward
+bindkey -M vicmd '/' history-incremental-search-backward
+bindkey '^R' history-incremental-pattern-search-backward
+
+bindkey '^[[A' up-line-or-search
+bindkey '^[[B' down-line-or-search

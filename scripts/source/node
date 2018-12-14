@@ -10,32 +10,11 @@
 # completionaphe.sh file you need.
 #source /opt/local/lib/node_modules/npm/lib/utils/completion.sh
 
+alias npm-pop='npm outdated -g --depth=0'
+alias npm-pupd='npm update -g'
+alias npm-lg="npm list -g --depth=0 2>/dev/null"
+alias npm-ll="npm list --depth=0 2>/dev/null"
 
-alias list-outdated-npm-packages='npm outdated -g --depth=0'
-alias update-all-npm-packages='npm update -g'
-alias ng="npm list -g --depth=0 2>/dev/null"
-alias nlf="npm list --depth=0 2>/dev/null"
-
-function init_nvm {
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
-
-  ###-tns-completion-start-###
-  if [ -f /Users/pat/.tnsrc ]; then 
-      source /Users/pat/.tnsrc 
-  fi
-  ###-tns-completion-end-###
-
-  # export BULLETTRAIN_PROMPT_ORDER=(
-  #   time
-  #   status
-  #   dir
-  #   nvm
-  #   aws
-  #   git
-  #   cmd_exec_time
-  # )  
-}  
-
-alias load-node-env='init_nvm'
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use  # This loads nvm
+[[ -r $NVM_DIR/bash_completion ]] && \. $NVM_DIR/bash_completion

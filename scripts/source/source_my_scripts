@@ -7,33 +7,40 @@
 # -----------------------------------------------------------------------------
 
 scripts=(
-  brew
-  iterm
+#  brew
+#  iterm
+  python
+  preztzo
+  #antigen
+  #oh-my-zsh
   zsh
-  enki
-  core_utils
+#  enki
+#  core_utils
   vscode
   vim
-  aspnet
-  better_ls
-  goenv
-  jenv
-  rbenv
-  ssh
+#  aspnet
+#  better_ls
+#  goenv
+#  jenv
+#  rbenv
+#  ssh
   node
-  elixir
-  aws
-  git
-  android
-  react-native
-  python
-  tiny-care-terminal
-  tmux
+#  elixir
+#  aws
+#  git
+#  android
+#  react-native
+#  tiny-care-terminal
+#  tmux
 )
 
 mydir=${0:a:h}
 for script in "${scripts[@]}"
 do
   # echo 'sourcing ' "${script}"
+  # { time (
+  #   source ${mydir}/${script}
+  # ) }
   source ${mydir}/${script}
+
 done
