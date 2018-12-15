@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # -----------------------------------------------------------------------------
 # "THE BEER-WARE LICENSE" (Revision 42):
 # <bonecrusher@covenofchaos.com>  wrote this file.  As long as  you retain this
@@ -15,6 +17,17 @@ alias npm-pupd='npm update -g'
 alias npm-lg="npm list -g --depth=0 2>/dev/null"
 alias npm-ll="npm list --depth=0 2>/dev/null"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use  # This loads nvm
-[[ -r $NVM_DIR/bash_completion ]] && \. $NVM_DIR/bash_completion
+function nvm() {
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use  # This loads nvm
+  [[ -r $NVM_DIR/bash_completion ]] && \. $NVM_DIR/bash_completion
+
+  nvm "$@"
+}
+
+function node() {
+  unfunction node
+  nvm use 11.4
+  node "$@"
+}
+

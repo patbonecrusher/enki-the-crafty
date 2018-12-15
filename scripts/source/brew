@@ -13,9 +13,6 @@ alias brew-do-update='brew bundle cleanup'
 alias brew-generate='brew bundle dump'
 
 
-. `brew --prefix`/etc/profile.d/z.sh
-eval $(thefuck --alias)
-
 alias tl='tree -L'
 
 alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor; brew cu -f -a'
@@ -30,5 +27,15 @@ alias bsrestart='brew services restart'
 # This is a zsh feature
 autoload -U zmv
 alias mmv='noglob zmv -W'
-
 alias mancy='/Applications/Mancy.app/Contents/MacOS/Mancy'
+
+function fuck() {
+    eval $(thefuck --alias)
+    fuck "$@"
+}
+
+function z() {
+    unfunction z
+    source `brew --prefix`/etc/profile.d/z.sh
+    _z "$@"
+}

@@ -6,5 +6,6 @@
 #  > BoneCrusher <
 # -----------------------------------------------------------------------------
 
+export CUBIN="/usr/local/opt/coreutils/libexec/gnubin"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"

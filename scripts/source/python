@@ -6,8 +6,12 @@
 #  > BoneCrusher <
 # -----------------------------------------------------------------------------
 
+export PYTHON_CONFIGURE_OPTS="--enable-framework"
+export PIPENV_VENV_IN_PROJECT="enabled"
+
 function pyenv() {
     eval "$( command pyenv init - )"
     pyenv "$@"
 }
 
+alias py_install='CPPFLAGS="-I$(brew --prefix zlib)/include" pyenv install -v'

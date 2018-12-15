@@ -7,7 +7,7 @@
 # -----------------------------------------------------------------------------
 
 scripts=(
-#  brew
+  brew
 #  iterm
   python
   preztzo
@@ -15,11 +15,11 @@ scripts=(
   #oh-my-zsh
   zsh
 #  enki
-#  core_utils
+  coreutils
   vscode
   vim
 #  aspnet
-#  better_ls
+  better_ls
 #  goenv
 #  jenv
 #  rbenv
