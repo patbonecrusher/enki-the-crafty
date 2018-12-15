@@ -14,7 +14,7 @@ scripts=(
   #antigen
   #oh-my-zsh
   zsh
-#  enki
+  enki
   coreutils
   vscode
   vim
