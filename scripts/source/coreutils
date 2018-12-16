@@ -7,5 +7,5 @@
 # -----------------------------------------------------------------------------
 
 export CUBIN="/usr/local/opt/coreutils/libexec/gnubin"
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+prependToPath /usr/local/opt/coreutils/libexec/gnubin
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"

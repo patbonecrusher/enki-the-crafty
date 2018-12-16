@@ -1,66 +1,19 @@
+# -----------------------------------------------------------------------------
+# "THE BEER-WARE LICENSE" (Revision 42):
+# <bonecrusher@covenofchaos.com>  wrote this file.  As long as  you retain this
+# notice you can do whatever you want with this stuff.  If we meet some day and
+# you think this stuff is worth it, you can buy me a beer in return.
+#  > BoneCrusher <
+# -----------------------------------------------------------------------------
+
 export enki_location=${(%):-%N}
 
 enki_location=`readlink $enki_location`
 enki_location=`dirname $enki_location`
 enki_location=$enki_location/..
 
-export omz_custom_location=${enki_location}/.omz-custom
-export ohmyzsh_location=${enki_location}/.oh-my-zsh
+# No longer using oh-my-zsh
+# export omz_custom_location=${enki_location}/.omz-custom
+# export ohmyzsh_location=${enki_location}/.oh-my-zsh
 
 source ${enki_location}/scripts/source/source_my_scripts
-
-
-# fortune | cowsay | lolcat
-#archey
-
-# Enables us to have .envrc file with specific env variable in a folder
-eval "$(direnv hook zsh)"
-
-# `v` is already mapped to visual mode, so we need to use a different key to
-# open Vim
-bindkey -v
-bindkey -M vicmd "^V" edit-command-line
-
-# export PATH="/Users/pat/.pyenv:$PATH"
-# eval "$(pyenv init -)"
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-setopt appendhistory autocd extendedglob notify
-unsetopt beep
-# End of lines configured by zsh-newuser-install
-
-# The following lines were added by compinstall
-# zstyle :compinstall filename '/Users/pat/.zshrc'
-# autoload -Uz compinit
-# compinit
-# End of lines added by compinstall
-
-function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
-
-eval "$(direnv hook zsh)"
-# eval "$(pyenv init -)"
-
-# export PATH=/Users/pat/.kiex/elixirs/elixir-1.6.1/bin:/Users/pat/.kiex/bin:$PATH
-# export PATH=/usr/local/sbin:$PATH
-# Hook for desk activation
-# [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
-
-# tabtab source for electron-forge package
-# uninstall by removing these lines or running `tabtab uninstall electron-forge`
-# [[ -f /Users/pat/.nvm/versions/node/v9.5.0/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /Users/pat/.nvm/versions/node/v9.5.0/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh
-
-# export PATH="$HOME/.fastlane/bin:$PATH"
-
-# [ -s "/Users/pat/.jabba/jabba.sh" ] && source "/Users/pat/.jabba/jabba.sh"
-
-
-# . /Users/pat/.nix-profile/etc/profile.d/nix.sh
-# if which swiftenv > /dev/null; then eval "$(swiftenv init -)"; fi
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/pat/.sdkman"
-[[ -s "/Users/pat/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/pat/.sdkman/bin/sdkman-init.sh"
-
-
-#export PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/pat/.vimpkg/bin:/Users/pat/.vimpkg/bin:/Users/pat/.vimpkg/bin"

@@ -7,10 +7,10 @@
 # -----------------------------------------------------------------------------
 
 scripts=(
-  brew
-#  iterm
   python
   preztzo
+  brew
+#  iterm
   #antigen
   #oh-my-zsh
   zsh
@@ -18,7 +18,6 @@ scripts=(
   coreutils
   vscode
   vim
-#  aspnet
   better_ls
 #  goenv
 #  jenv
@@ -32,15 +31,46 @@ scripts=(
 #  react-native
 #  tiny-care-terminal
 #  tmux
+  sdkman
 )
+
+checkPath () {
+        case ":$PATH:" in
+                *":$1:"*) return 1
+                        ;;
+        esac
+        return 0;
+}
+
+# Prepend to $PATH
+prependToPath () {
+        for a; do
+                checkPath $a
+                if [ $? -eq 0 ]; then
+                        PATH=$a:$PATH
+                fi
+        done
+        export PATH
+}
+
+# Append to $PATH
+appendToPath () {
+        for a; do
+                checkPath $a
+                if [ $? -eq 0 ]; then
+                        PATH=$PATH:$a
+                fi
+        done
+        export PATH
+}
 
 mydir=${0:a:h}
 for script in "${scripts[@]}"
 do
-  # echo 'sourcing ' "${script}"
   # { time (
   #   source ${mydir}/${script}
   # ) }
+  # echo 'sourcing ' "${script}"
   source ${mydir}/${script}
 
 done

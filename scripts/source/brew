@@ -6,7 +6,8 @@
 #  > BoneCrusher <
 # -----------------------------------------------------------------------------
 
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/sbin:$PATH
+# prependToPath /usr/local/sbin
+# prependToPath /usr/local/bin
 
 alias brew-check-update='brew bundle check'
 alias brew-do-update='brew bundle cleanup'
@@ -38,4 +39,12 @@ function z() {
     unfunction z
     source `brew --prefix`/etc/profile.d/z.sh
     _z "$@"
+}
+
+function j() {
+    (( $+commands[brew] )) && {
+        local pfx=$(brew --prefix)
+        [[ -f "$pfx/etc/autojump.sh" ]] && . "$pfx/etc/autojump.sh"
+        j "$@"
+    }
 }

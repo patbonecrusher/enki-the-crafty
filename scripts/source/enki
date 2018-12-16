@@ -9,7 +9,7 @@
 mydir=${(%):-%N}
 mydir=`dirname $mydir`
 
-export PATH=$PATH:${mydir}/../bin
+prependToPath ${mydir}/../bin
 export SHELL=/usr/local/bin/zsh
 
 alias rm='trash'

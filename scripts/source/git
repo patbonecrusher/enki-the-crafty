@@ -32,5 +32,3 @@ alias gdump="git cat-file -p"
 alias gec="git config --global -e"
 alias gpa="alias | grep '^g'"
 
-
-# add alias for gdg = git diff-tool specify tool

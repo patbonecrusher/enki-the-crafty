@@ -17,7 +17,7 @@ alias npm-pupd='npm update -g'
 alias npm-lg="npm list -g --depth=0 2>/dev/null"
 alias npm-ll="npm list --depth=0 2>/dev/null"
 
-#export PATH=/Users/pat/.nvm/versions/node/v11.4.0/bin:$PATH
+prependToPath /Users/pat/.nvm/versions/node/v11.4.0/bin
 function nvm() {
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use  # This loads nvm
