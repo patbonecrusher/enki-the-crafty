@@ -17,3 +17,5 @@ enki_location=$enki_location/..
 # export ohmyzsh_location=${enki_location}/.oh-my-zsh
 
 source ${enki_location}/scripts/source/source_my_scripts
+
+[ -n "$DESK_ENV" ] && source "$DESK_ENV" || true

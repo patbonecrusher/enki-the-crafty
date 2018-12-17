@@ -10,9 +10,9 @@ mydir=${(%):-%N}
 mydir=`dirname $mydir`
 
 prependToPath ${mydir}/../bin
-export SHELL=/usr/local/bin/zsh
 
-alias rm='trash'
+[[ "$(uname)" = "Darwin" ]] && export SHELL=/usr/local/bin/zsh
+[[ "$(uname)" = "Darwin" ]] && alias rm='trash'
 alias path='echo -e ${PATH//:/\\n}'
 
 update() {
