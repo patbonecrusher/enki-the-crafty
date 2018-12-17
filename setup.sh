@@ -57,5 +57,10 @@ done
 # setup_ohmyzsh ${mydir}
 # setup_dotfiles ${mydir}/dotfiles ${mydir}/..
 
-# get https://github.com/github/hub/releases
+# cd /tmp
+# curl -L https://github.com/github/hub/releases/download/v2.6.1/hub-linux-amd64-2.6.1.tgz > hub.tgz
+# tar xvzf hub.tgz
+# cd hub-linux-amd64-2.6.1
 # sudo prefix=/usr/local ./install
+# rm -rf hub-linux-amd64-2.6.1
+# rm hub.tgz
