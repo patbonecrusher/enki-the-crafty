@@ -18,4 +18,7 @@ enki_location=$enki_location/..
 
 source ${enki_location}/scripts/source/source_my_scripts
 
-[ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
+[[ "$(uname)" = "Linux" ]] && [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
+stty -ixon
+
+[[ "$(uname)" = "Linux" ]] && [ -s "/home/pat/.jabba/jabba.sh" ] && source "/home/pat/.jabba/jabba.sh"
