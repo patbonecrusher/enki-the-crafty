@@ -19,7 +19,7 @@ scripts=(
   vscode
   vim
   better_ls
-#  goenv
+  go
 #  jenv
 #  rbenv
 #  ssh
@@ -29,9 +29,10 @@ scripts=(
   git
 #  android
 #  react-native
-#  tiny-care-terminal
+  tiny-care-terminal
 #  tmux
   sdkman
+  1password
 )
 
 checkPath () {
@@ -71,6 +72,6 @@ do
   #   source ${mydir}/${script}
   # ) }
   # echo 'sourcing ' "${script}"
-  source ${mydir}/${script}
+  source ${mydir}/${script}.zsh
 
 done

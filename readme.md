@@ -5,8 +5,8 @@ Repo to help quickly setup my macOS shell environment, when restarting or when g
 - It serves as a backup for crafter cli helper shell scripts
 
 ## Assumptions
-- Only work on macOS
-- This is based on zsh and oh-my-zsh
+- Only work on macOS and Linux
+- This is based on zsh and pretzo
 
 ## Usage
 

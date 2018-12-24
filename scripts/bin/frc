@@ -1,5 +1,0 @@
-echo "${*:1}"
-for f in ./*;
-  do 
-     [ -d $f ] && (cd "$f" && echo $f && ${*:1})
-  done;

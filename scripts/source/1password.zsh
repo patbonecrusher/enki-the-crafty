@@ -6,16 +6,8 @@
 #  > BoneCrusher <
 # -----------------------------------------------------------------------------
 
-mydir=${(%):-%N}
-mydir=`dirname $mydir`
-
-export LS_OPTIONS='--color=auto'
-
-[[ "$(uname)" = "Darwin" ]] && eval `gdircolors ${mydir}/dircolors`
-
-alias ls='ls ${LS_OPTIONS} --group-directories-first -hF'
-alias ll='ls ${LS_OPTIONS} --group-directories-first -lhF'
-alias l='ls ${LS_OPTIONS} --group-directories-first -lAhF'
-alias c="clear"
-alias e="exit"
-
+function op() {
+    unfunction op
+    eval $(op signin thelaplante)
+    op "$@"
+}

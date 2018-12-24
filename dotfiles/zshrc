@@ -16,6 +16,7 @@ enki_location=$enki_location/..
 # export omz_custom_location=${enki_location}/.omz-custom
 # export ohmyzsh_location=${enki_location}/.oh-my-zsh
 
-source ${enki_location}/scripts/source/source_my_scripts
+source ${enki_location}/scripts/source/source_my_scripts.zsh
 
 [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
+alias d.='desk .'

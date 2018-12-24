@@ -6,5 +6,6 @@
     "todo-tree.customHighlight": {
         "TODO": {},
         "FIXME": {}
-    }
+    },
+    "python.jediEnabled": false
 }

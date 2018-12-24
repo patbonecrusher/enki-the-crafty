@@ -9,7 +9,8 @@
 # Reference: https://www.npmjs.com/package/tiny-care-terminal
 # git: https://github.com/notwaldorf/tiny-care-terminal
 # Twitter keys: https://apps.twitter.com/app/3513117/keys
-function init_tct {
+function tiny-care-terminal() {
+  unfunction tiny-care-terminal
   # List of accounts to read the last tweet from, comma separated
   # The first in the list is read by the party parrot.
   export TTC_BOTS='tinycarebot,selfcare_bot,magicrealismbot'
@@ -18,7 +19,7 @@ function init_tct {
   export TTC_SAY_BOX='parrot'
   
   # List of folders to look into for `git` commits, comma separated.
-  export TTC_REPOS='~/Projects'
+  export TTC_REPOS='Users/pat/Projects'
 
   # The max directory-depth to look for git repositories in
   # the directories defined with `TTC_REPOS`. Note that the deeper
@@ -57,5 +58,3 @@ function init_tct {
 
   tiny-care-terminal
 }
-
-alias load-tct='init_tct'
