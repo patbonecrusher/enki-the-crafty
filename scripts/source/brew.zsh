@@ -9,6 +9,9 @@
 # prependToPath /usr/local/sbin
 # prependToPath /usr/local/bin
 
+[[ "$(uname)" = "Linux" ]] && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+[[ "$(uname)" = "Linux" ]] && prependToPath /home/linuxbrew/.linuxbrew/bin
+
 alias brew-check-update='brew bundle check'
 alias brew-do-update='brew bundle cleanup'
 alias brew-generate='brew bundle dump'
