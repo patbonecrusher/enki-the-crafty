@@ -32,3 +32,4 @@ alias gdump="git cat-file -p"
 alias gec="git config --global -e"
 alias gpa="alias | grep '^g'"
 
+alias gpd="git push d3omni HEAD:refs/drafts/102/master/mm_2"
