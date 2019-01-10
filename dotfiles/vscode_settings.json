@@ -9,5 +9,9 @@
     },
     "python.jediEnabled": false,
     "window.zoomLevel": 0,
-    "editor.insertSpaces": false
+    "editor.insertSpaces": false,
+    "jira-plugin.workingProject": "GP",
+    "jira-plugin.baseUrl": "d3engineering.atlassian.net",
+    "jira-plugin.username": "plaplante@d3engineering.com",
+    "liveServer.settings.donotShowInfoMsg": true
 }
