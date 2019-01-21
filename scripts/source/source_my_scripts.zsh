@@ -69,9 +69,9 @@ mydir=${0:a:h}
 for script in "${scripts[@]}"
 do
   # { time (
-  #   source ${mydir}/${script}
+  #   echo 'sourcing ' "${script}"
+  #   source ${mydir}/${script}.zsh
   # ) }
-  # echo 'sourcing ' "${script}"
   source ${mydir}/${script}.zsh
 
 done
