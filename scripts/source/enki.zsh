@@ -10,6 +10,7 @@ mydir=${(%):-%N}
 mydir=`dirname $mydir`
 
 prependToPath ${mydir}/../bin
+prependToPath ${mydir}/../bin.$(uname)
 
 [[ "$(uname)" = "Darwin" ]] && export SHELL=/usr/local/bin/zsh
 [[ "$(uname)" = "Darwin" ]] && alias rm='trash'
