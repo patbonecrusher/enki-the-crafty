@@ -21,3 +21,8 @@ use_node() {
   
   export NODE_PATH=./node_modules
 }
+
+use_emsdk() {
+	echo ho
+	source ~/Projects/opensource/emsdk/emsdk_env.sh
+}
