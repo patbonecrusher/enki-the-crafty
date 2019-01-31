@@ -1,4 +1,7 @@
 
+POWERLEVEL9K_MODE='nerdfont-complete'
+source "${ZDOTDIR:-$HOME}/.zprezto/modules/prompt/external/powerlevel9k/powerlevel9k.zsh-theme"
+
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
 alias h='history-stat'

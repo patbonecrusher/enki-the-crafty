@@ -13,5 +13,6 @@
     "jira-plugin.workingProject": "GP",
     "jira-plugin.baseUrl": "d3engineering.atlassian.net",
     "jira-plugin.username": "plaplante@d3engineering.com",
-    "liveServer.settings.donotShowInfoMsg": true
+    "liveServer.settings.donotShowInfoMsg": true,
+    "terminal.integrated.rendererType": "dom"
 }
