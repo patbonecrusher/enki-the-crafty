@@ -21,4 +21,5 @@ alias e="exit"
 
 alias ls='colorls --gs -l'
 alias la='colorls  --sd -l -A'
+alias ll='colorls  --sd -l -A'
 alias l='ls'
