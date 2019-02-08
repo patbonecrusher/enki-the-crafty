@@ -8,11 +8,14 @@
         "FIXME": {}
     },
     "python.jediEnabled": false,
-    "window.zoomLevel": 0,
+    "window.zoomLevel": -1,
     "editor.insertSpaces": false,
     "jira-plugin.workingProject": "GP",
     "jira-plugin.baseUrl": "d3engineering.atlassian.net",
     "jira-plugin.username": "plaplante@d3engineering.com",
     "liveServer.settings.donotShowInfoMsg": true,
-    "terminal.integrated.rendererType": "dom"
+    "terminal.integrated.rendererType": "dom",
+    "editor.fontFamily": "FiraCode-Retina ,'Hack Nerd Font', Menlo, Monaco, 'Courier New', monospace",
+    "terminal.integrated.fontFamily": "'Hack Nerd Font'",
+    "editor.fontLigatures": true
 }

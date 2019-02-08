@@ -6,8 +6,8 @@
 #  > BoneCrusher <
 # -----------------------------------------------------------------------------
 
-export EDITOR=vim
-export VISUAL=vim
-alias vi='vim'
+export EDITOR=nvim
+export VISUAL=nvim
+alias vi='nvim'
 
 appendToPath ~/.vimpkg/bin

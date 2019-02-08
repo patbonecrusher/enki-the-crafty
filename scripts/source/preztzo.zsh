@@ -6,7 +6,7 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 # Add the custom Medium M icon prompt segment
-POWERLEVEL9K_CUSTOM_MEDIUM="echo -n $'\uF859'"
+POWERLEVEL9K_CUSTOM_MEDIUM="echo -n $'\uf302'"
 POWERLEVEL9K_CUSTOM_MEDIUM_FOREGROUND="black"
 POWERLEVEL9K_CUSTOM_MEDIUM_BACKGROUND="white"
 # Add the custom freeCodeCamp prompt segment
@@ -15,7 +15,7 @@ POWERLEVEL9K_CUSTOM_FREECODECAMP_FOREGROUND="white"
 POWERLEVEL9K_CUSTOM_FREECODECAMP_BACKGROUND="red"
 # Load Nerd Fonts with Powerlevel9k theme for Zsh
 POWERLEVEL9K_MODE='nerdfont-complete'
-source "${ZDOTDIR:-$HOME}/.zprezto/modules/prompt/external/powerlevel9k/powerlevel9k.zsh-theme"
+# source "${ZDOTDIR:-$HOME}/.zprezto/modules/prompt/external/powerlevel9k/powerlevel9k.zsh-theme"
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
 alias h='history-stat'
