@@ -24,7 +24,8 @@ source ${enki_location}/scripts/source/source_my_scripts.zsh
 [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
 stty -ixon
 
-[[ "$(uname)" = "Linux" ]] && [ -s "/home/pat/.jabba/jabba.sh" ] && source "/home/pat/.jabba/jabba.sh"
+echo "PUT THIS IN A FUNCTION"
+# source ~/.jabba/jabba.sh
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/pat/.sdkman"

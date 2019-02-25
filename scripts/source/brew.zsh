@@ -19,7 +19,7 @@ alias brew-generate='brew bundle dump'
 
 alias tl='tree -L'
 
-alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor; brew cu -f -a'
+alias brewup='brew update; brew upgrade; brew cleanup --prune-prefix; brew cleanup; brew doctor; brew cu -f -a'
 
 alias bsstart='brew services start'
 alias bsstop='brew services stop'

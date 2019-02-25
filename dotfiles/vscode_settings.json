@@ -8,7 +8,7 @@
         "FIXME": {}
     },
     "python.jediEnabled": false,
-    "window.zoomLevel": -1,
+    "window.zoomLevel": 0,
     "editor.insertSpaces": false,
     "jira-plugin.workingProject": "GP",
     "jira-plugin.baseUrl": "d3engineering.atlassian.net",
