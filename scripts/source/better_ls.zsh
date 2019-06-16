@@ -19,7 +19,7 @@ export LS_OPTIONS='--color=auto'
 alias c="clear"
 alias e="exit"
 
-alias ls='colorls --gs -l'
-alias la='colorls  --sd -l -A'
-alias ll='colorls  --sd -l -A'
+alias ls='colorls --gs -l --group-directories-first'
+alias la='colorls  --sd -l -A --group-directories-first'
+alias ll='colorls  --sd -l -A --group-directories-first'
 alias l='ls'

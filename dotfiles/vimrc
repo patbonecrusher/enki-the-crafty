@@ -17,6 +17,7 @@ Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'vim-airline/vim-airline'		" Better status bar
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'wakatime/vim-wakatime'
 
 call vundle#end()            " required
 filetype plugin indent on    " required

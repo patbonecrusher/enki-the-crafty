@@ -24,11 +24,11 @@ scripts=(
 #  jenv
 #  rbenv
 #  ssh
-  node
+#  node
 #  elixir
 #  aws
   git
-#  android
+  android
 #  react-native
   tiny-care-terminal
 #  tmux
