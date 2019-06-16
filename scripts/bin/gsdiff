@@ -1,0 +1,2 @@
+#!/bin/sh
+git difftool -y -x "sdiff -w $(tput cols)" "${@}" | less
