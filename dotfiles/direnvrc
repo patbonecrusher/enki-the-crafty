@@ -1,28 +1,30 @@
-use_node() {
-  layout node
+# use a certain pyenv version
+use_python() {
+    if [ -n "$(which pyenv)" ]; then
+        local pyversion=$1
+        pyenv local ${pyversion}
+    fi
+}
 
+layout_virtualenv() {
+    python3 -m venv .
+}
+
+layout_activate() {
+    source .venv/bin/activate
+}
+
+use_nvm() {
   local node_version=$1
 
-  if [ "$node_version" == "package.json" ]; then
-    # Requires jq: `brew install jq`
-    node_version=`jq --raw-output .engines.node package.json | tr -d "<=> "`
+  nvm_sh=~/.nvm/nvm.sh
+  if [[ -e $nvm_sh ]]; then
+    source $nvm_sh
+    nvm use $node_version
   fi
-
-  local node_path=${NODE_DIR:-/Users/pat/.nvm/versions/node}
-
-  if [ -x "$node_path/$node_version/bin/node" ]; then
-    PATH_add $node_path/$node_version/bin
-  elif [ -x "$node_path/v$node_version/bin/node" ]; then
-    # Support nvm users (nvm prefixes versions with 'v')
-    PATH_add $node_path/v$node_version/bin
-  else
-    echo "!!! Node.js version $node_version is not installed"
-  fi
-  
-  export NODE_PATH=./node_modules
 }
 
-use_emsdk() {
-	echo ho
-	source ~/Projects/opensource/emsdk/emsdk_env.sh
+use_asdfnode() {
+  asdf local nodejs $1
 }
+
