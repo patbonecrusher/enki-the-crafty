@@ -46,3 +46,14 @@ SAVEHIST=1000
 setopt appendhistory autocd extendedglob notify
 unsetopt beep
 # End of lines configured by zsh-newuser-install
+
+function myjira {
+	jira issue GP-$1
+}
+
+function myjirab {
+	jira issue open GP-$1
+}
+
+alias j='myjira'
+alias jb='myjirab'

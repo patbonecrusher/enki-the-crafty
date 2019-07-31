@@ -69,10 +69,10 @@ appendToPath () {
 mydir=${0:a:h}
 for script in "${scripts[@]}"
 do
-  # { time (
-  #   echo 'sourcing ' "${script}"
-  #   source ${mydir}/${script}.zsh
-  # ) }
-  source ${mydir}/${script}.zsh
+#  { time (
+#    echo 'sourcing ' "${script}"
+#    source ${mydir}/${script}.zsh
+#  ) }
+   source ${mydir}/${script}.zsh
 
 done
