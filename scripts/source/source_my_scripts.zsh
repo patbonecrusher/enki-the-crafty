@@ -34,6 +34,7 @@ scripts=(
 #  tmux
   sdkman
   1password
+  jabba
 )
 
 checkPath () {
