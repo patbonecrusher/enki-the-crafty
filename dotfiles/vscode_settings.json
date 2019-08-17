@@ -18,7 +18,6 @@
     "workbench.colorCustomizations": {
         "editorCodeLens.foreground": "#ff0000",
     },
-    "aws.profile": "default",
     "aws.recentCredentials": [
         "default"
     ],
@@ -46,6 +45,10 @@
         {
             "name": "Gatsby Purple",
             "value": "#639"
+        },
+        {
+            "name": "Go Cyan",
+            "value": "#5dc9e2"
         },
         {
             "name": "Java Blue-Gray",
