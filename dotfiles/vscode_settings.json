@@ -18,7 +18,6 @@
     "workbench.colorCustomizations": {
         "editorCodeLens.foreground": "#ff0000",
     },
-    "aws.profile": "default",
     "aws.recentCredentials": [
         "default"
     ],
