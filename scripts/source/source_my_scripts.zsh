@@ -35,6 +35,7 @@ scripts=(
   sdkman
   1password
   jabba
+  tsc
 )
 
 checkPath () {
