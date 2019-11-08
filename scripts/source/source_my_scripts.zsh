@@ -26,7 +26,7 @@ scripts=(
 #  ssh
 #  node
 #  elixir
-#  aws
+  aws
   git
   android
 #  react-native
@@ -64,6 +64,11 @@ appendToPath () {
                         PATH=$PATH:$a
                 fi
         done
+        export PATH
+}
+
+removeFromPath() {
+        PATH=$(echo $PATH| sed -e 's!'$rmv'!!' -e 's/::/:/')
         export PATH
 }
 
