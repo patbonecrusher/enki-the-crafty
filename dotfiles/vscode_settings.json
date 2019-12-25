@@ -1,6 +1,6 @@
 {
     "python.jediEnabled": false,
-    "window.zoomLevel": -1,
+    "window.zoomLevel": 0,
     "editor.insertSpaces": false,
     "terminal.integrated.rendererType": "dom",
     "editor.fontFamily": "FiraCode-Retina ,'Hack Nerd Font', Menlo, Monaco, 'Courier New', monospace",
@@ -77,4 +77,6 @@
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "gerrit-view.server": "gerrit.d3engineering.com",
     "python.venvPath": "\"${rootPath}\", \"envs\", \".pyenv\", \".direnv\",\"bin\"",
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
  }
