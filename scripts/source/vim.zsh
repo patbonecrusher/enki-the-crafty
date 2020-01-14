@@ -6,8 +6,16 @@
 #  > BoneCrusher <
 # -----------------------------------------------------------------------------
 
-export EDITOR=nvim
-export VISUAL=nvim
-alias vi='nvim'
+export EDITOR=vim
+export VISUAL=vim
+alias vi='vim'
+alias vim='nvim'
 
-appendToPath ~/.vimpkg/bin
+# Must add this for nvim to work:
+# ~/.config/nvim/init.vim
+# set runtimepath^=~/.vim runtimepath+=~/.vim/after
+# let &packpath=&runtimepath
+# source ~/.vimrc
+
+
+# appendToPath ~/.vimpkg/bin

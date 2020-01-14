@@ -7,6 +7,9 @@ clonefork() {
   hub fork
 }
 
+alias git='hub'
+alias update-fork='git fetch upstream && git checkout master && git merge upstream/master && git push origin master'
+
 alias gitzip="git archive HEAD -o "
 
 alias glg1="git log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%cr)%C(reset) %C(white)%s%C(reset) %C(bold white)â€” %cn%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative"

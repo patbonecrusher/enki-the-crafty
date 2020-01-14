@@ -14,3 +14,31 @@ function title_text {
     echo -ne "\033]0;"$*"\007"
 }
 title_text freeCodeCamp
+
+source ~/.iterm2_shell_integration.zsh
+
+iterm2_print_user_vars() {
+  iterm2_set_user_var gitBranch $((git branch 2> /dev/null) | grep \* | cut -c3-)
+  iterm2_set_user_var badge $(dir_badges)
+  iterm2_set_user_var camel $(is_it_wednesday)
+  iterm2_set_user_var nodeVersion $(node -v)
+}
+
+function is_it_wednesday() {
+  if [[ $(date +%A) = "Thursday" ]]
+    then
+     echo "🐪" # Camel Prompt
+  else
+    echo "🐙" # Inky Prompt
+  fi
+}
+
+function dir_badges() {
+    while read directory badge || [[ -n "$directory" ]]
+    do
+        if [[ "$PWD" == $directory* ]]; then
+            echo $badge
+            break
+        fi
+    done < ~/.badges
+}
