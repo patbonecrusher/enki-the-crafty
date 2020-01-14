@@ -7,7 +7,7 @@ clonefork() {
   hub fork
 }
 
-alias git='hub'
+
 alias update-fork='git fetch upstream && git checkout master && git merge upstream/master && git push origin master'
 
 alias gitzip="git archive HEAD -o "
@@ -36,3 +36,8 @@ alias gec="git config --global -e"
 alias gpa="alias | grep '^g'"
 
 alias gpd="git push d3omni HEAD:refs/drafts/102/master/mm_2"
+
+eval "$(hub alias -s)"
+
+
+source /Users/pat/Projects/opensource/git-flow-completion/git-flow-completion.zsh
