@@ -9,70 +9,45 @@
 
 
 
-Proposal (goal to fall)
-Exploratory for 1 month
+Tomorrow:
+[ ] Diagnostic
+	[ ] Finish writing email
+	[ ] Update jira tasks
+	
+[ ] Go over my assigned Jira
+[x] Do my timesheet
 
--
-
-### Convert to swift
-
-Instead of doing a brute force obj-C to swift conversion, I suggest taking a more iterative approach where we convert the app to swift in steps. 
-
-Overall goals:
-
-* Get the core of the app functional
-	 * xml parsing/rendering logic
-	 * synching template
-	 * synching of data 
-* Available in the App Store (with sample data set)
-* Progress when doing long operation such as importing images (basically re-write image selection logic)
-	* multiple image selection : https://github.com/nohana/NohanaImagePicker
-* Support for iPad portrait
-
-
- 
-### Rewrite to react native 
-
-multiple image picker is not native to iOS
-swift: https://github.com/nohana/NohanaImagePicker)
-react native: https://github.com/ivpusic/react-native-image-crop-picker
-I suggest we fix it so that it shows progress for cloud picture download"
+[ ] High Priority plan
+	[ ] Script cleanup
+	[ ] Release jenkins job for production
+		[ ] scripts
+		[ ] firmware
+	
+[ ] Finish production release
+[ ] Release 1.2 rc
 
 
 
-visudo and then add
-# Allow members of group sudo to execute any command
-%sudo  ALL=(ALL:ALL) NOPASSWD:ALLGreg Rowe [3:02 PM]
-add NOPASSWD: prior to the last ALL in sudoers
+
+[ ] Provide list of knobs and button that goes in action count (boardinfo dump should list them all)
+[ ] Provide board info instructions (send confluence page)
+[ ] Add store action count to suspend (not just shut down)
+[ ] Board info have a save and restore options using json
 
 
 
-Protecode
-FOSSology
-OSS Discovery (itself having GNU Affero Public License v3)
-Palamida
-Ninka (itself GNU GPL licensed)
-Masterbranch but it seems sadly in standby (or dead?) since its main actors were hired by TalentBin around the beginning of 2013.
-Coderwall more focused on developers and teams
-Open Source Software Directory (only a search tool)
-The Free Software Directory (wiki)
+[ ] Makefile to replace Android.mk
 
-Black duck
-	HUB is the black solution (portal?)
-	  scan client (secure hashes and fingerprint), web portal, knowledge base
-	  match the security risks, and version information risks
 
-	scan all language
-	can be saas (we are not interested)
-	produce BIL
-	produce a license risk
 
-	confidence factor?  no way to reach 100% guarantee, black duck is the longest.
-	team on the backend that will fix false negative or false positive
+10.1.6.62
+username jenkins
+password d3Grouppa$$
 
-	can generate the notices file (the report)  would be the deliverabe the customer wants to see
-	Policy management (can be setup to notify anybody when a policy is violated)''
+code is in the project folder.
 
-	Annual subscription
-	  - based on the amount of code.
-	  - around 3-5-7 56k annually.
+https://d3engineering.atlassian.net/wiki/spaces/PPF/pages/451477505/Automated+Test+Stations
+https://d3engineering.atlassian.net/wiki/spaces/PPF/pages/509018114/Automated+Tests
+
+
+add to slack

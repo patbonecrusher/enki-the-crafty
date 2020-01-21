@@ -20,6 +20,7 @@ scripts=(
   coreutils
   better_ls
   java
+  tsc
 #  1password
 #  python
 #  iterm

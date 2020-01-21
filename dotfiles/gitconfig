@@ -1,6 +1,9 @@
 [user]
-	name = Patrick Laplante
+	name = Pat Laplante
 	email = laplante.patrick@gmail.com
+
+[includeIf "gitdir:~/Projects/tsc/"]
+    path = ~/.gitconfig-tsc
 
 [core]
 	excludesfile = /Users/pat/.gitignore_global
