@@ -50,4 +50,9 @@ https://d3engineering.atlassian.net/wiki/spaces/PPF/pages/451477505/Automated+Te
 https://d3engineering.atlassian.net/wiki/spaces/PPF/pages/509018114/Automated+Tests
 
 
-add to slack
+Still need to remove the iPad hack to pass certification.
+Error in VBus handling issue in the code.  Require modification and retest.
+We should keep the platform awake during certification
+We need instructions to hold a wake lock to NTS (We think it is already in the instruction…. We should make sure we update the doc to say it is mandatory
+
+Difficult to say.  Even we fix the VBus timing.  This will enable us to do more tests.
