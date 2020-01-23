@@ -93,3 +93,6 @@ do
     source ${mydir}/${script}.zsh
 
 done
+
+
+alias gccenter='env XDG_CURRENT_DESKTOP=GNOME gnome-control-center'

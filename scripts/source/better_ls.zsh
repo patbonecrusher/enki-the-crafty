@@ -13,9 +13,10 @@ export LS_OPTIONS='--color=auto'
 
 [[ "$(uname)" = "Darwin" ]] && eval `gdircolors ${mydir}/dircolors.zsh`
 
-alias ls='ls ${LS_OPTIONS} --group-directories-first -hF'
-alias ll='ls ${LS_OPTIONS} --group-directories-first -lhF'
-alias l='ls ${LS_OPTIONS} --group-directories-first -lAhF'
+
+alias ls='exa ${LS_OPTIONS} --group-directories-first -hF'
+alias ll='exa ${LS_OPTIONS} --group-directories-first -lhF'
+alias l='exa ${LS_OPTIONS} --group-directories-first -lAhF'
 alias c="clear"
 alias e="exit"
 

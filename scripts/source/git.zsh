@@ -40,4 +40,4 @@ alias gpd="git push d3omni HEAD:refs/drafts/102/master/mm_2"
 eval "$(hub alias -s)"
 
 
-source /Users/pat/Projects/opensource/git-flow-completion/git-flow-completion.zsh
+[ -e "~/Projects/opensource/git-flow-completion/git-flow-completion.zsh" ]  && . ~/Projects/opensource/git-flow-completion/git-flow-completion.zsh
