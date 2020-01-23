@@ -1,4 +1,38 @@
 
+n.n.n / 2020-01-14
+==================
+
+  * Updates while reseting my mac after power fail
+  * wip
+  * Merge branch 'master' of https://github.com/patbonecrusher/enki-the-crafty
+  * gems and npm asdf new aliases
+  * Merge branch 'master' of github.com:patbonecrusher/enki-the-crafty
+  * helper
+  * mode packages
+  * wip
+  * vscode settings
+  * More asdf stuff
+  * backup
+  * wip
+  * wip
+  * wip
+  * Fixed deprecated brew commands
+  * minor tweaks
+  * More powerlevel setting
+  * switch to colorls
+  * added powerlevel
+  * Merge branch 'master' of github.com:patbonecrusher/enki-the-crafty
+  * wip
+  * Merge branch 'master' of github.com:patbonecrusher/enki-the-crafty
+  * Added platform specific bin folder
+  * backup
+  * Tweaks to 1password script
+  * wip
+  * Cleaning up
+  * Merge branch 'master' of github.com:patbonecrusher/enki-the-crafty
+  * added brew linux support
+  * Added goenv stuff.
+
 n.n.n / 2018-12-20
 ==================
 

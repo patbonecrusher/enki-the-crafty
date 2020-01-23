@@ -7,35 +7,44 @@
 # -----------------------------------------------------------------------------
 
 scripts=(
-  1password
-  python
   preztzo
   brew
+  zsh
+  aws
+  enki
+  git
+  tmux
+  vim
+  vscode
+  asdf
+  coreutils
+  better_ls
+  java
+#  1password
+#  python
 #  iterm
   #antigen
   #oh-my-zsh
-  zsh
-  enki
-  coreutils
-  vscode
-  vim
-  better_ls
-  go
+#  enki
+#  vscode
+#  vim
+#  better_ls
+#  go
 #  jenv
 #  rbenv
 #  ssh
 #  node
 #  elixir
 #  aws
-  git
-  android
+#  git
+#  android
 #  react-native
-  tiny-care-terminal
+#  tiny-care-terminal
 #  tmux
-  sdkman
-  1password
-  jabba
-  tsc
+#  sdkman
+#  1password
+#  jabba
+#  tsc
 )
 
 checkPath () {
@@ -68,13 +77,18 @@ appendToPath () {
         export PATH
 }
 
+removeFromPath() {
+        PATH=$(echo $PATH| sed -e 's!'$rmv'!!' -e 's/::/:/')
+        export PATH
+}
+
 mydir=${0:a:h}
 for script in "${scripts[@]}"
 do
 #  { time (
-#    echo 'sourcing ' "${script}"
+#    echo $script
 #    source ${mydir}/${script}.zsh
 #  ) }
-   source ${mydir}/${script}.zsh
+    source ${mydir}/${script}.zsh
 
 done

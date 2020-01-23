@@ -7,6 +7,9 @@ clonefork() {
   hub fork
 }
 
+
+alias update-fork='git fetch upstream && git checkout master && git merge upstream/master && git push origin master'
+
 alias gitzip="git archive HEAD -o "
 
 alias glg1="git log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%cr)%C(reset) %C(white)%s%C(reset) %C(bold white)â€” %cn%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative"
@@ -33,3 +36,8 @@ alias gec="git config --global -e"
 alias gpa="alias | grep '^g'"
 
 alias gpd="git push d3omni HEAD:refs/drafts/102/master/mm_2"
+
+eval "$(hub alias -s)"
+
+
+source /Users/pat/Projects/opensource/git-flow-completion/git-flow-completion.zsh

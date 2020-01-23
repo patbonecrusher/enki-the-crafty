@@ -15,15 +15,6 @@ mydir=`dirname $mydir`
 mydir=${0:a:h}
 echo $mydir
 
-function setup_ohmyzsh {
-  destination="${1}"
-  if [[ ! -d "${destination}/.oh-my-zsh" ]]; then
-  	(cd "${destination}" && git clone https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh)
-  else
-  	(cd "${destination}/.oh-my-zsh" && git pull origin master)
-  fi
-}
-
 function setup_dotfiles ()
 {
   dotfile_location="${1}"
@@ -45,17 +36,15 @@ function setup_dotfiles ()
   done
 }
 
-git clone https://github.com/floor114/zsh-apple-touchbar ${mydir}/.zsh-apple-touchbar
+# git clone https://github.com/floor114/zsh-apple-touchbar ${mydir}/.zsh-apple-touchbar
+# git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+#setopt EXTENDED_GLOB
+#for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+#  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+#done
 
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-
-setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
-
-# setup_ohmyzsh ${mydir}
-# setup_dotfiles ${mydir}/dotfiles ${mydir}/..
+echo ${mydir}/dotfiles ${mydir}/..
+setup_dotfiles ${mydir}/dotfiles ${HOME}
 
 # cd /tmp
 # curl -L https://github.com/github/hub/releases/download/v2.6.1/hub-linux-amd64-2.6.1.tgz > hub.tgz
