@@ -18,3 +18,4 @@ source ${enki_location}/scripts/source/source_my_scripts.zsh
 
 # Remove the duplicate
 normalize_path
+#source ~/powerlevel10k/powerlevel10k.zsh-theme
