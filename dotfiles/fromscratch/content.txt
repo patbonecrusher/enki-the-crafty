@@ -19,14 +19,25 @@ Tomorrow:
 
 [ ] High Priority plan
 	[ ] Script cleanup
+		[x] Makefile to replace Android.mk
+		[ ] Jenkins job
 	[ ] Release jenkins job for production
 		[ ] scripts
 		[ ] firmware
 	
-[ ] Finish production release
-[ ] Release 1.2 rc
+	
+[x] Finish production release
 
 
+[ ] docker file for calibration
+[ ] docker file for automation
+
+[ ] write 1.2 release notes
+[ ] send official 1.2 email
+
+[x] push production folder to filesd3
+[x] push scripts from alex to filesd3
+[ ] increment bit version in 1.2 branch
 
 
 [ ] Provide list of knobs and button that goes in action count (boardinfo dump should list them all)
@@ -35,8 +46,6 @@ Tomorrow:
 [ ] Board info have a save and restore options using json
 
 
-
-[ ] Makefile to replace Android.mk
 
 
 
