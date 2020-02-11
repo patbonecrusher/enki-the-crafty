@@ -16,3 +16,15 @@ alias tscmm2='export TSC_PATH=/home/pat/Projects/tsc/mm_2 && export MANIF=102_ma
 
 alias repo-init='repo init -u ssh://plaplante@gerrit.d3engineering.com:29418/tsc/caf/platform/manifest -b d3/dev/open_q_820 -m'
 alias repo-sync='repo sync -c --no-tags -j32'
+
+function extract_release {
+    cd ~/Download
+
+    rm -rf delivery
+    tar xvzf phoenix_${1}_userdebug_img.tar.gz
+    mv delivery ${1}
+}
+
+function install_release {
+    ~/Projects/tsc/scripts/flash-release.sh ~/Downloads/${1}
+}
