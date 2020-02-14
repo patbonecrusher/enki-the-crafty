@@ -21,10 +21,25 @@ function extract_release {
     cd ~/Download
 
     rm -rf delivery
-    tar xvzf phoenix_${1}_userdebug_img.tar.gz
+    tar xvzf ${1}.tar.gz
     mv delivery ${1}
 }
 
 function install_release {
     ~/Projects/tsc/scripts/flash-release.sh ~/Downloads/${1}
+}
+
+alias adbrr='adb wait-for-device && adb root && sleep 0.1 && adb wait-for-device && adb remount'
+
+
+function pull_logs {
+    mkdir /tmp/$1
+    adb root
+    adb remount
+    cd /tmp/$1
+    adb pull /data/misc/logger
+    cd /tmp
+    t=$1_logs_`date +%s`
+    tar cvzf $t.tgz $1
+    mv $t.tgz ~/Downloads
 }
