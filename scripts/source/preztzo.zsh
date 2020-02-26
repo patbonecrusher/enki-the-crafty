@@ -51,3 +51,5 @@ if [[ "$ENABLE_CORRECTION" == "true" ]]; then
 
   setopt correct_all
 fi
+
+alias dumpcolor='for i in {0..255}; do print -Pn "%K{$i} %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done'

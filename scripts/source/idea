@@ -1,0 +1,1 @@
+alias dfff='df -h --output=source,fstype,size,used,avail,pcent -x tmpfs -x devtmpfs'
