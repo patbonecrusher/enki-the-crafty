@@ -1,4 +1,7 @@
 
+eval "$(hub alias -s)"
+[ -e "~/Projects/opensource/git-flow-completion/git-flow-completion.zsh" ]  && . ~/Projects/opensource/git-flow-completion/git-flow-completion.zsh
+
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
 clonefork() {
@@ -37,7 +40,8 @@ alias gpa="alias | grep '^g'"
 
 alias gpd="git push d3omni HEAD:refs/drafts/102/master/mm_2"
 
-eval "$(hub alias -s)"
 
-
-[ -e "~/Projects/opensource/git-flow-completion/git-flow-completion.zsh" ]  && . ~/Projects/opensource/git-flow-completion/git-flow-completion.zsh
+# Functional programming map function stops if the 
+# last line of a script is a source command.
+# Not sure why
+# echo '' > /dev/null

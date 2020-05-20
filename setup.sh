@@ -43,6 +43,9 @@ function setup_dotfiles ()
 #  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 #done
 
+git clone https://github.com/Tarrasch/zsh-functional.git ${mydir}/zsh-functional
+
+
 echo ${mydir}/dotfiles ${mydir}/..
 setup_dotfiles ${mydir}/dotfiles ${HOME}
 
@@ -53,3 +56,4 @@ setup_dotfiles ${mydir}/dotfiles ${HOME}
 # sudo prefix=/usr/local ./install
 # rm -rf hub-linux-amd64-2.6.1
 # rm hub.tgz
+

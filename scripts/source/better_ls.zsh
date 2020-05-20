@@ -17,6 +17,7 @@ export LS_OPTIONS='--color=auto'
 alias ls='exa ${LS_OPTIONS} --group-directories-first -hF'
 alias ll='exa ${LS_OPTIONS} --group-directories-first -lhF'
 alias l='exa ${LS_OPTIONS} --group-directories-first -lAhF'
+alias lss'exa ${LS_OPTIONS} --group-directories-first -lAhF --sort=size'
 alias c="clear"
 alias e="exit"
 

@@ -27,6 +27,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'davidhalter/jedi-vim'
 call plug#end()
 
 " Run vim +PlugInstall

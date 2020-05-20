@@ -12,20 +12,16 @@ enki_location=`readlink $enki_location`
 enki_location=`dirname $enki_location`
 enki_location=$enki_location/..
 
-. "${enki_location}/zsh-functional/functional.plugin.zsh"
-
 source ${enki_location}/scripts/source/source_my_scripts.zsh
 
 # alias icat="kitty +kitten icat"
-#alias grep='/usr/local/bin/ggrep'
 
 # Remove the duplicate
-#normalize_path
+normalize_path
+<<<<<<< HEAD
 
-#test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
-# tabtab source for electron-forge package
-# uninstall by removing these lines or running `tabtab uninstall electron-forge`
-#[[ -f /home/pat/.asdf/installs/nodejs/12.8.0/.npm/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /home/pat/.asdf/installs/nodejs/12.8.0/.npm/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh
-
-#export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+=======
+#source ~/powerlevel10k/powerlevel10k.zsh-theme
+>>>>>>> a9ffe39c79b1d5540cbfbeac73da508ee3c55245

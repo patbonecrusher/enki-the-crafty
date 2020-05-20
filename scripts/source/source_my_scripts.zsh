@@ -11,19 +11,21 @@ scripts=(
   brew
   zsh
   aws
-  enki
   git
+  enki
   tmux
   vim
   vscode
   asdf
   coreutils
   better_ls
+  node
   java
   tsc
 #  1password
 #  python
-#  iterm
+  iterm
+
   #antigen
   #oh-my-zsh
 #  enki
@@ -44,8 +46,6 @@ scripts=(
 #  tmux
 #  sdkman
 #  1password
-#  jabba
-#  tsc
 )
 
 checkPath () {
@@ -83,16 +83,13 @@ removeFromPath() {
         export PATH
 }
 
-mydir=${0:a:h}
-for script in "${scripts[@]}"
-do
-#  { time (
-#    echo $script
-#    source ${mydir}/${script}.zsh
-#  ) }
-    source ${mydir}/${script}.zsh
+mydir=${0:a:h}  
 
-done
+source_script_timed() { print -- $1; time ( source ${mydir}/${1}.zsh )}
+source_script() { print -- $1; source ${mydir}/${1}.zsh }
+eachf source_script ${scripts[@]}
 
 
 alias gccenter='env XDG_CURRENT_DESKTOP=GNOME gnome-control-center'
+alias ghci='stack ghci'
+alias haskell='ghci'

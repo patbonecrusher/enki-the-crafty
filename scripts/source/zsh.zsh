@@ -46,6 +46,8 @@ setopt appendhistory autocd extendedglob notify
 unsetopt beep
 # End of lines configured by zsh-newuser-install
 
+. "${enki_location}/zsh-functional/functional.plugin.zsh"
+
 function myjira {
 	jira issue GP-$1
 }

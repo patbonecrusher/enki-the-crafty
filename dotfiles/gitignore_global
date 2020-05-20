@@ -1,3 +1,7 @@
 node_modules
 Icon
 package-lock.json
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store

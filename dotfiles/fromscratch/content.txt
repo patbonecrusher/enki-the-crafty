@@ -1,5 +1,5 @@
-|> Apps to buy / wwawtch
 	-> https://www.binaryage.com/
+|> Apps to buy / wwawtch
 	->> anything from https://objective-see.com/products.html	
 	
 --------	
@@ -8,60 +8,251 @@
 
 
 
-
-Tomorrow:
-[ ] Diagnostic
-	[ ] Finish writing email
-	[ ] Update jira tasks
-	
-[ ] Go over my assigned Jira
-[x] Do my timesheet
-
-[ ] High Priority plan
-	[ ] Script cleanup
-		[x] Makefile to replace Android.mk
-		[ ] Jenkins job
-	[ ] Release jenkins job for production
-		[ ] scripts
-		[ ] firmware
-	
-	
-[x] Finish production release
-
-
-[ ] docker file for calibration
-[ ] docker file for automation
-
-[ ] write 1.2 release notes
-[ ] send official 1.2 email
-
-[x] push production folder to filesd3
-[x] push scripts from alex to filesd3
-[ ] increment bit version in 1.2 branch
-
-
-[ ] Provide list of knobs and button that goes in action count (boardinfo dump should list them all)
-[ ] Provide board info instructions (send confluence page)
-[ ] Add store action count to suspend (not just shut down)
-[ ] Board info have a save and restore options using json
-
-
-
-
-
-10.1.6.62
-username jenkins
-password d3Grouppa$$
-
-code is in the project folder.
+tau:
+	10.1.6.62
+	username jenkins
+	password d3Grouppa$$
 
 https://d3engineering.atlassian.net/wiki/spaces/PPF/pages/451477505/Automated+Test+Stations
 https://d3engineering.atlassian.net/wiki/spaces/PPF/pages/509018114/Automated+Tests
 
+|>Cloud stuff discussed with Scott
+	- Using cloud more for day to day business where it make sense
+	- saas ai testsing on tda. (our hardware)
+	- Edge - pushing live data in the cloud (from tda, radar sensors tracking people...) RIT, Hook up TI Data Acquisition (ROSSBAG - all robotic data)
+	- ai at the edge (sage maker) Amazon  Need some idea/brainstorming
+	Quick and "Dirty" Demo....
 
-Still need to remove the iPad hack to pass certification.
-Error in VBus handling issue in the code.  Require modification and retest.
-We should keep the platform awake during certification
-We need instructions to hold a wake lock to NTS (We think it is already in the instruction…. We should make sure we update the doc to say it is mandatory
+ESTIMATIONS
+	PDAF++
+	  Questions:
+		Should we share the position information with Ability for CDAF
+		Making is simpler to give to CDAF
+		Might not be a perfect abstraction to them.
+		Backward compatible API won't be perfect.
+	  D3 Mostly done but require some testing
+		1 Weeks to finish integration
+		1 Week of support time 
+	  Zeiss
+		Few weeks
 
-Difficult to say.  Even we fix the VBus timing.  This will enable us to do more tests.
+	DIAGNOSTIC TOOLS
+	  Camera Library (Debugging improvments)
+		Fast capture diagnostic tools  (2-3 Weeks)
+		  Test socket (to dump data on the go, would move cpt logic into the daemon, reducing complexity of having to manage 2 instances) 
+		  Some memory corruption when closing camera library
+		  We are not returning the error code to the socket.
+
+		Log analysing (1 week)
+		  Something to pipe a logcat into and produce a list of error (grep with a list of keyword).
+		  Imager register dump parser (we have that with CTP.  Need to document in confluence on how to use)
+			We need to fix some of it.  Revisit it
+
+		Lens (Need chuck's input)
+
+	DEBUGGING XMC/FOCUS - STABILITY
+	  This needs more thinking
+
+	FULL RES DNG DISPLAY
+	  It might be possible to use the android reprocessing api (probably a bad idea and a lot of work)
+	  We should talk with Thomas (Brainstorm)
+		Pat to schedule
+
+	AUTOMATION
+	  pat to estimate. (2 months)
+	
+Emily
+  Only person on the team that write test cases
+  Test rail and Jira
+  She meets with the analyst to ask question then she tell them what she is going to test, and what she isn't going to test.
+  
+  she does ensure error case analysis.  make a matrix of things that needs to be done.  traceability matrix
+  
+  Important to reduce testing time.  Hate wasting time.  Accountability and accuracy.
+  SME for scanning.
+  
+  she would be perfect to do service.  Go getter to figure out stuff
+  MTBF experience
+  
+  she is a thinkering
+  
+  so she did python long time ago, sure she could figured it out.  purefy rational, integration team, she did code analysis to find memory leaks.
+  
+  she figured out pcl issues related to a color printer.  
+  
+Meeting on features March 26th
+	Overall
+		Requirements are still not 100% Mature
+		Plan to put in camera in automn or maybe next winter.
+	
+	--------
+	1 |> DSLR MODE - Live View only in EVF (Neuland, D3, BayLibre)
+		to help user shoot under direct sunlight due to reflection
+		some users coming from dslr background also prefer that
+		would also help with power saving
+
+		PL: WE WILL NEED AN EXTRA TEST IN POWER MODE TO MEASURE POWER WITH EVF ON ALL THE TIME
+
+		Power saving is not the main driver here.
+
+		TL: We need to think about the user friendliness.  Can't swipe on the left as it is lock while in EVF mode.
+			We need a good idea from design affairs.
+			We should do a workshop between design affair, Zeiss and Neuland
+
+		3 options:
+			Leave the sensor running (quicker but more power hungry)
+			Turning off the camera when not looking through the EVF.  Save tons of power but huge delay to power on.
+			Half power saving mode (certain components off, some on).  That would need D3 and Intrinsyc help
+
+			This 3rd options should be a different task.  Maybe wake up the camera using the gyro or something.
+
+		2 tasks:
+			Define power saving mode (D3's research).  How to resume quicker, using the gyro to wake up?
+			Define the UI so it is understandable
+
+		Dimitri wrote something 2 years ago about eco mode.
+
+	--------
+	2 |> B&W options, LUTs from lightroom (Neuland, Adobe, Lantronix, D3)
+		Shoot in B&W is only once cases
+		Later users could have their own presets, should be visible in preview.
+		DNG would stay as is, only Jpeg would be grayscale
+		would have to aply the lut when tiling and creating the JPEG
+		
+		we need a way to get custom profile out of lightroom
+		  adobe will have to play with us
+		  implementation shouldn't depend on adobe's timeline.
+		  
+		What parameter we want dynamics and ask Lantronix how much time and effort it will take.
+		
+		cameralib interface at D3 to load luts
+		
+	--------	
+	3 |> Digital Zoom (Lantronix, D3, Thomas, Ability)
+		To take advantage of the 37MegaPixels that we have.
+		Fake 50/70 mm field of view (croping mode)
+		Avoid having to go through lightroom for further processing.  Makes sharing quicker.
+		DNG would stay the same.
+		The idea is to have Thomas do the croping.
+			Will get slower.
+			Thomas would preffer the cpp to do that crop
+			
+		OK with loosing quality in liveview.  (Dimitri wants to avoid changing the image pipeline).
+		Zoom on center, no UI to move crop region around.
+		
+		Don't use the mag mode at all (Dimitri, spend zero time on that).
+		
+		Make the grid dynamic (how will this affect PDAF, same way it affects CDAF)
+			- Leave the grid as they are (no affect on focus)
+			- try to do statistic grid dynamically (reduction of data in every grid, we would need to implement that)
+				would reduce spotlight autofocus issue.
+				
+			TODO : 	Need to ask Lantronix how much work this would be, and is it necessary
+					ZEISS to ask themselves if this is a must have vs a nice to have.  Estimate that it will double/triple effort.
+				
+	--------
+	4 |> Various noise cleaning levels (D3, ZEISS, Neuland)
+		Competition have noise reduction level available.  
+			Results doesn't seem to be understable from user point of view.
+			User don't usually understand how noise work and they end up not using that at all.
+			
+		Applying noise reduction on long exposure would take long time to process
+		When doing fireworks, you wouldn't want to use this feature to avoid waiting in between shoots.
+		
+		PR: We already apply an impulse filter before saving dng.  should that have to change
+		
+		EASIER PATH: We just change the DNG tag and light room take care of applying noise cleaning
+		
+		We could also apply it to the DNG and attach the settings to it. We have to block for it.
+		
+		D3> We need direction on what path to take.  We would need to add a new parameter as live view is running so it works with fast capture.
+		
+
+-------------------------------------
+
+Symbioide
+	Monday 6th 1/2 hour call with guillaume
+	Monday 6th 1 hour stubbing rest_fun
+	Tuesday 7th 1 hour coding some rest example
+	Wednesday 2 hours trying to understand how their code works
+	Saturday 4 hours coding logic to authenticate using mvvm cross, created real symbioide project.  Ported my old project logic over to handle webservices (abstraction).
+	Sunday 4 hours coding logic of the retrieving and displaying classes.  Had to mes around with handling cookie which was a pain in the butt to figure out.
+	Monday 6 hours coding logic to support class selection in a listview.  It now shows navigation from class to courses (course list is still not visible yet).  Spent 2 of that time playing around their website, creating a student user which represents better the workflow.  covade user had access to other unrelated course because it is an admin user.
+
+
+GP-6485
+Anything can ability can do to troubleshoot the issue or should they send the camera to d3
+need a proposal on how to proceed
+
+Lens.py test changing
+  Doing repeated focus on the camera. (Good idea for camera focus test).
+  Moving the lens to infinity
+  Uses lens.py.  but if we use lens .py, the camera doesn't know the lens has been moved
+  Talk to paul about.
+  add a 3a library command to move the lens
+
+  Check on paul side to see what ability does
+    so go mf, move the lens, go back to af and do a half press and see what ability does.
+	
+	
+   
+   
+
+	
+Radar/GM
+	time of flight
+	infra red
+	pointcloud
+	heatmap
+	pixel
+	lidar is light
+
+	radar is hard to characterize  works well in far stuff .  on a clutter environment what does it sees.
+	succeptible to vibration
+	static radar is moving around when driving down a potholed riddle road.
+
+	in research:
+		analysis and trade
+		quirks of perception for radar or camera (camera is lighting, can produce only white pixel) but what is it for radar.
+		How do you make the thing fail.
+
+
+	What has been done so far.  And what is our path forward.
+
+
+
+
+Merge and create a build of script 1.6
+	
+	
+mod is at 3.3
+infinity is 0
+
+Axel: Ported the patch power one
+PTP
+
+Cyril: Patches needs to be reviewed on master and NTS branch (2 master, 3 to nts+ 1 that need porting from nts to master)
+Frequency Polling
+
+Week of 18th certification
+
+
+
+merge pdaf stable in our 1.2.3
+Out of the box thinker
+
+Try on my camera 
+2 verticals position
+1 horizontal
+focus at 1.5 diopters (do that with py.lens)
+	do the measurement
+
+
+Axel:
+	Look at the PTP raw thumbnail on macbook
+	
+
+
+
+
+

@@ -17,25 +17,34 @@ alias npm-pupd='npm update -g'
 alias npm-lg="npm list -g --depth=0 2>/dev/null"
 alias npm-ll="npm list --depth=0 2>/dev/null"
 
-prependToPath /Users/pat/.nvm/versions/node/v11.4.0/bin
-function nvm() {
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use  # This loads nvm
-  [[ -r $NVM_DIR/bash_completion ]] && \. $NVM_DIR/bash_completion
+# This is from snyk.io
+# To check for package vulnerability
+# Required by npq
+export SNYK_TOKEN=79a75796-8784-427c-a1f4-3e106c9f95fe
 
-  nvm "$@"
-}
+alias npms='npq-hero'
+alias yarns="NPQ_PKG_MGR=yarn npq-hero"
 
-function node() {
-  unfunction node
-  unfunction npm
-  nvm use 11.4
-  node "$@"
-}
+# Now using asdf
+# prependToPath /Users/pat/.nvm/versions/node/v11.4.0/bin
+# function nvm() {
+#   export NVM_DIR="$HOME/.nvm"
+#   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use  # This loads nvm
+#   [[ -r $NVM_DIR/bash_completion ]] && \. $NVM_DIR/bash_completion
 
-function npm() {
-  unfunction node
-  unfunction npm
-  nvm use 11.4
-  npm "$@"
-}
+#   nvm "$@"
+# }
+
+# function node() {
+#   unfunction node
+#   unfunction npm
+#   nvm use 11.4
+#   node "$@"
+# }
+
+# function npm() {
+#   unfunction node
+#   unfunction npm
+#   nvm use 11.4
+#   npm "$@"
+# }
