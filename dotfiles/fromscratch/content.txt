@@ -219,40 +219,24 @@ Radar/GM
 
 	What has been done so far.  And what is our path forward.
 
-
-
-
-Merge and create a build of script 1.6
+FOR 1.3
+	*Need a more detail planning*
+PDAF in all mode before July
+WYSIWYG Need to talk to kevin about this. Meeting with Thomas? Thomas needs what is required.
+	only for exposure, not for the aperture.
+Secure boot in 1.3
+PDAF++ should be in 1.3
+Mass storage, come back with estimate. I don't think it is possible.  This was removed.
+Geo tagging.  NEDevice to confirm if it is in. Need final testing. Companion app.H
+Hardware diagnostic tool: 
+	Need estimate for bist update for factory and field
 	
-	
-mod is at 3.3
-infinity is 0
-
-Axel: Ported the patch power one
-PTP
-
-Cyril: Patches needs to be reviewed on master and NTS branch (2 master, 3 to nts+ 1 that need porting from nts to master)
-Frequency Polling
-
-Week of 18th certification
+Certs: Meeting when results are avail
+New memory support (tested)
 
 
-
-merge pdaf stable in our 1.2.3
-Out of the box thinker
-
-Try on my camera 
-2 verticals position
-1 horizontal
-focus at 1.5 diopters (do that with py.lens)
-	do the measurement
-
-
-Axel:
-	Look at the PTP raw thumbnail on macbook
-	
-
-
-
-
+at 2 and at 1 diopter.
+   run from 0dpt, 1.5dpt and 3dpt
+   manually focusing to mod and infinity at start instead of scripting that
+     	
 

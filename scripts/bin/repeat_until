@@ -1,0 +1,14 @@
+#!/usr/bin/env zsh
+function repeat_until() {
+	local action=$2
+	while [[ ! $(eval $1) == "true" ]]; do
+		eval $action
+	done
+}
+
+
+# declare -i i=0;
+# function foo() 			{  i+=1; echo $i; }
+# function gppdenough() 	{ [[ i -ge 10 ]] && print -- "true"; }
+
+# until_ gppdenough foo

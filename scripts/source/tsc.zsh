@@ -11,12 +11,15 @@ mydir=`dirname $mydir`
 
 prependToPath ${mydir}/../bin.tsc
 
-alias lens='${mydir}/../bin.tsc/lens.sh'
+# Lens aliases
+alias lens='${mydir}/../bin.tsc/lens'
 alias push_xmc='${mydir}/../bin.tsc/push_xmc.sh'
 alias get_graphs='lens log_data'
 
+# Overall repo command
 alias repo-init='repo init -u ssh://plaplante@gerrit.d3engineering.com:29418/tsc/caf/platform/manifest -b d3/dev/open_q_820 -m'
 alias repo-sync='repo sync -c --no-tags -j32'
+
 
 alias tsc110='export TSC_PATH=/home/pat/Projects/tsc/1.1.0 && export MANIF=102_master_1_1.xml && desk . tsc'
 alias tscmm2a='export TSC_PATH=/home/pat/Projects/tsc/mm_2 && export MANIF=102_master_mm_2.xml && desk . tsc'
@@ -38,38 +41,6 @@ function extract_release {
     mv /tmp/delivery ${1}
 }
 
-function flash_release {
-    cwd=`pwd`
-    cd ${1}/jflash/Android
-    echo `pwd`
-
-    adb wait-for-device
-    adb reboot bootloader
-
-    #sleep 5
-    fastboot flash boot boot.img
-    fastboot flash system system.img
-    fastboot flash userdata userdata.img
-    fastboot oem flash-fpgas
-    cd ${cwd}
-}
-
-function flash_last_night_mm2_ud {
-    wh=`gdate -d "yesterday 22:52" '+%Y%m%d_%H%M'`
-    pull_latest_master
-    [[ -d /tmp/mm2_ud_${wh} ]] || extract_release /tmp/mm2_ud_${wh}
-    flash_release /tmp/mm2_ud_${wh}
-}
-
-function load_lbs1_build {
-    get_lbs1_release
-    extract_release delivery
-    flash_release delivery 270010111281801014
-}
-
-function dump_versions {
-    adb shell getprop | grep version
-}
 
 function recovery_mode {
     adb reboot recovery

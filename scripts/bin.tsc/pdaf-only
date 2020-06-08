@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -e
+cwd=$(pwd)
+function finish { cd "${cwd}"; };
+trap finish EXIT
+
+adb root    &>/dev/null
+adb remount &>/dev/null
+adb root    &>/dev/null
+adb remount &>/dev/null
+
+adb shell "setprop persist.phoenix.cl.pdaf.forceff 1"
+adb shell "setprop persist.phoenix.cl.pdaf.forcec 0"

@@ -1,0 +1,136 @@
+#!/usr/bin/env bash
+
+set -e
+cwd=$(pwd)
+function finish { cd "${cwd}"; }
+trap finish EXIT
+
+# saner programming env: these switches turn some bugs into errors
+set -o errexit -o pipefail -o noclobber -o nounset
+
+
+# SSH method.  requires connection over VPN or to be in office
+# which is annoying.  So just keep this as a reference.
+#-------------------------------------------------------------------------------
+# TSC_ROOT_FS=/srv/files/tsc
+# STABLE_ROOT_FS=${TSC_ROOT_FS}/stable
+# MASTER_ROOT_FS=${TSC_ROOT_FS}/master
+
+# function get_latest_version_ssh() {
+#     kind=${1}
+#     echo $(ssh infilesd3 /bin/bash << EOF
+#         cd ${kind}
+#         VAR=\$(ls -dt -- */ | head -n1)
+#         res=\$VAR
+
+#         while [ true ]; do
+#             cd \$VAR
+
+#             ls -dt -- */ &> /dev/null
+#             [ ! \$? -eq 0 ] && break
+
+#             VAR=\$(ls -dt -- */ | head -n1)
+#             res=\$res\$VAR
+#         done
+
+#         echo \$res
+# EOF
+# )
+# }
+
+TSC_ROOT_FS_WGET=https://files.d3engineering.com/tsc
+# STABLE_ROOT_FS_WGET=${TSC_ROOT_FS_WGET}/stable
+# MASTER_ROOT_FS_WGET=${TSC_ROOT_FS_WGET}/master/mm2_master
+
+function get_latest_version_wget() { wget -q -O- "${1}" | foo.py; }
+
+# echo "latest stable: "$(get_latest_version ${STABLE_ROOT_FS})
+# echo "latest master: "$(get_latest_version ${MASTER_ROOT_FS})
+
+# echo "latest stable: "$(get_latest_version_wget ${STABLE_ROOT_FS_WGET}/stable_1.2.3)
+# echo "latest master: "$(get_latest_version_wget ${MASTER_ROOT_FS_WGET})
+
+# latest_build=$(get_latest_version_wget ${STABLE_ROOT_FS_WGET}/stable_1.2.3)
+# latest_ud=phoenix_stable_1.2.3_${latest_build}_userdebug_img.tar.gz
+# latest_path=${TSC_ROOT_FS_WGET}/stable/stable_1.2.3/${latest_build}/${latest_ud}
+# dest_file=/tmp/stable_1.2.3_${latest_build}
+
+# latest_build=$(get_latest_version_wget ${MASTER_ROOT_FS_WGET})
+# latest_ud=phoenix_mm2_master_${latest_build}_userdebug_img.tar.gz
+# latest_path=${TSC_ROOT_FS_WGET}/master/mm2_master/${latest_build}/${latest_ud}
+# dest_file=/tmp/mm2_master_${latest_build}
+
+# #[[ -f /tmp/mm2_ud_${wh}.tar.gz ]] || 
+# wget --no-check-certificate --output-document ${dest_file}.tar.gz "${latest_path}?region=virginia"
+
+# rm -rf /tmp/delivery
+# cd /tmp && tar xvzf ${dest_file}.tar.gz
+# cd /tmp/delivery/jflash/Android
+# echo `pwd`
+
+# adb wait-for-device
+# adb reboot bootloader
+
+# #sleep 5
+# fastboot flash boot boot.img
+# fastboot flash system system.img
+# fastboot flash userdata userdata.img
+# fastboot oem flash-fpgas
+
+type=master
+version=mm2_master
+build_number=latest
+
+while [[ "$#" -gt 0 ]]; do
+    case $1 in
+        -t|--type) type="$2"; shift ;;
+        -v|--version) version="$2"; shift ;;
+        -b|--build) build_number="$2"; shift ;;    
+        *) echo "Unknown parameter passed: $1"; exit 1 ;;
+    esac
+    shift
+done
+
+echo "Type? $type"
+echo "Version? $version"
+echo "Build Number? $build_number"
+
+work_dir=/tmp/${version}/${build_number}
+
+function download_build() {
+    search_dir=${TSC_ROOT_FS_WGET}/${type}/${version}
+    latest_build=$(get_latest_version_wget "${search_dir}")
+    latest_ud=phoenix_${version}_${latest_build}_userdebug_img.tar.gz
+    latest_path=${search_dir}/${latest_build}/${latest_ud}
+    dest_file=/tmp/${version}_${latest_build}
+
+    work_dir=/tmp/${version}/${latest_build}
+    if [[ -d $work_dir ]]; then
+        echo "already downloaded"
+        return
+    fi
+    
+    wget --no-check-certificate --output-document "${dest_file}".tar.gz "${latest_path}?region=virginia"
+
+    [[ -d ${work_dir} ]] && rm -rf "${work_dir}"
+    mkdir -p "${work_dir}"
+    cd /tmp && tar xvzf "${dest_file}".tar.gz -C "${work_dir}" --strip-components=1
+}
+
+flash_build() {
+    cd "${work_dir}"/jflash/Android
+    pwd
+
+    adb wait-for-device
+    adb reboot bootloader
+
+    #sleep 5
+    fastboot flash boot boot.img
+    fastboot flash system system.img
+    fastboot flash userdata userdata.img
+    fastboot oem flash-fpgas
+}
+
+echo "${work_dir}"
+[[ ! -d $work_dir ]] && download_build
+flash_build

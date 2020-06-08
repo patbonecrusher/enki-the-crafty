@@ -22,30 +22,7 @@ scripts=(
   node
   java
   tsc
-#  1password
-#  python
   iterm
-
-  #antigen
-  #oh-my-zsh
-#  enki
-#  vscode
-#  vim
-#  better_ls
-#  go
-#  jenv
-#  rbenv
-#  ssh
-#  node
-#  elixir
-#  aws
-#  git
-#  android
-#  react-native
-#  tiny-care-terminal
-#  tmux
-#  sdkman
-#  1password
 )
 
 checkPath () {
@@ -86,7 +63,7 @@ removeFromPath() {
 mydir=${0:a:h}  
 
 source_script_timed() { print -- $1; time ( source ${mydir}/${1}.zsh )}
-source_script() { print -- $1; source ${mydir}/${1}.zsh }
+source_script() { echo $1; source ${mydir}/${1}.zsh }
 eachf source_script ${scripts[@]}
 
 

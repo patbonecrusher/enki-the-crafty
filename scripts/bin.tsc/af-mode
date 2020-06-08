@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+set -e
+cwd=$(pwd)
+function finish { cd "${cwd}"; };
+trap finish EXIT
+
+adb root    &>/dev/null
+adb remount &>/dev/null
+adb root    &>/dev/null
+adb remount &>/dev/null
+
+pdaf_on=$(adb shell "getprop persist.phoenix.cl.pdaf.forceff 0")
+cdaf_on=$(adb shell "getprop persist.phoenix.cl.pdaf.forcec 1")
+
+echo "Normal: When both are 0"
+echo "pdaf only: ${pdaf_on}"
+echo "cdaf only: ${cdaf_on}"

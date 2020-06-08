@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -e
+
+cwd=$(pwd)
+function finish { cd "${cwd}"; }
+trap finish EXIT
+
+xmcbin=${1-/Users/pat/Projects/tsc/lens_fw/TSC_VSM/build/gcc_m4/xmc_lens.hex}
+
+adb root    &>/dev/null
+sleep 0.5
+adb remount &>/dev/null
+
+adb push "${xmcbin}" /etc/firmware/xmc_lens.hex
+adb shell phoenix_upload_firmware lens
+
+#[[ -z $1 ]] || adb reboot
+

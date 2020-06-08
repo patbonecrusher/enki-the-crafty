@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+
+set -e
+cwd=$(pwd)
+function finish { cd "${cwd}"; }
+trap finish EXIT
+
+# saner programming env: these switches turn some bugs into errors
+set -o errexit -o pipefail -o noclobber -o nounset
+
+function get_latest_version_ssh() {
+    kind=${1}
+    echo "$(ssh infilesd3 /bin/bash << EOF
+        cd ${kind}
+        VAR=\$(ls -dt -- */ | head -n1)
+        res=\$VAR
+
+        while [ true ]; do
+            cd \$VAR
+
+            ls -dt -- */ &> /dev/null
+            [ ! \$? -eq 0 ] && break
+
+            VAR=\$(ls -dt -- */ | head -n1)
+            res=\$res\$VAR
+        done
+
+        echo \$res
+EOF
+)
+}
+
+
+
+# SSH method.  requires connection over VPN or to be in office
+# which is annoying.  So just keep this as a reference.
+#-------------------------------------------------------------------------------
+# TSC_ROOT_FS=/srv/files/tsc
+# STABLE_ROOT_FS=${TSC_ROOT_FS}/stable
+# MASTER_ROOT_FS=${TSC_ROOT_FS}/master
+
+# function get_latest_version_ssh() {
+#     kind=${1}
+#     echo $(ssh infilesd3 /bin/bash << EOF
+#         cd ${kind}
+#         VAR=\$(ls -dt -- */ | head -n1)
+#         res=\$VAR
+
+#         while [ true ]; do
+#             cd \$VAR
+
+#             ls -dt -- */ &> /dev/null
+#             [ ! \$? -eq 0 ] && break
+
+#             VAR=\$(ls -dt -- */ | head -n1)
+#             res=\$res\$VAR
+#         done
+
+#         echo \$res
+# EOF
+# )
+# }
+
+
+mm . && ~/clbin.sh && mv cl-binaries.tgz
