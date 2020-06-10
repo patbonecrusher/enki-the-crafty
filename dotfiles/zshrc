@@ -29,3 +29,4 @@ alias grep='/usr/local/bin/ggrep'
 #[[ -f /home/pat/.asdf/installs/nodejs/12.8.0/.npm/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /home/pat/.asdf/installs/nodejs/12.8.0/.npm/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh
 
 #export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+

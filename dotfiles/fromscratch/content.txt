@@ -195,8 +195,6 @@ Lens.py test changing
     so go mf, move the lens, go back to af and do a half press and see what ability does.
 	
 	
-   
-   
 
 	
 Radar/GM
@@ -218,6 +216,8 @@ Radar/GM
 
 
 	What has been done so far.  And what is our path forward.
+   
+   
 
 FOR 1.3
 	*Need a more detail planning*
@@ -240,3 +240,71 @@ at 2 and at 1 diopter.
    manually focusing to mod and infinity at start instead of scripting that
      	
 
+
+
+SCRUM TODAY:
+	STATUS OF LENS THAT DOESN'T FOCUS VERTICALLY??? WHAT DO WE TELL ABILITY?
+		Need more time from Chuck
+		
+	SECURE BOOT (I GET IT... WAS MISSING INFO FROM MIIKKA)
+
+	UMS (Still researching)
+
+	CLEANING JIRA FOR 1.3 WHICH WE NEED TO KEEP?
+	
+	SERVICE? (NEW OFFICE SETUP) END OF JULY.
+	
+	CHECK ON EXPENSE REQUEST NATE IS SUPPOSED TO SEND
+
+	SEND AN EMAIL TO ZEISS ABOUT THAT (Ask Axel first)
+	DISCUSS AXEL IDEA OF REMOVING THE IPAD WORK AROUND AND OFFER A UI
+	MAYBE HAVE A GUI TO OFFER USERS TO SELECT ROLES
+	
+	
+	BIST PASSES ON A CAMERA WITHOUT PROXIMITY SENSOR
+	
+	
+	Lantronix would have to fuse and retest every som
+	already do something for the wifi address change 
+		maybe we could fuse at that point.
+		
+	We need a meeting between Gerry, Dimitri and Hans-Juergen
+	ability  to send 10 soms to D3 for more testing.
+	
+	
+	TO TEST
+	UNFUSED SOM WITH ZEISS SIGNED BINARIES
+	and FUSED SOME WITH ZEISS SIGNED BINARIES
+	
+	
+	Preboot loader
+	2 xbl (preboot loader rom and sbl/xlb)
+	
+	xbl has some special access to be able to read the partition and allow the chain of trust from the preboot loader through the lk and through android
+	  trust zone (built in arm)
+	  key: anchor certificate (one time programable)
+	  All images are verified against that certificate and the chip code.
+	  
+	Starting out in trust zone at the preboot loader rom and if it works it will boot or else you get into a spin boot loop
+	
+	when android tries to start if the signature doesn't match then it will fail to boot.
+	
+	Protection from running images.
+	
+	What can we update via OTA.
+	
+	Signed XBL LK and ADRUINO libs.
+	
+	Jeffrey signs with a default key. Logic in pbl or xbl if this doesn't match default, activate chip code fuse and authenticate
+	
+	LK can talk to the emmc via rpmb (secure) 
+	
+	Default key is wide open.
+	
+	
+	
+	  
+	
+	
+	
+	
