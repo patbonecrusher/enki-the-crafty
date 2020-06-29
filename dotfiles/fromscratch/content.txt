@@ -178,24 +178,6 @@ Symbioide
 	Saturday 4 hours coding logic to authenticate using mvvm cross, created real symbioide project.  Ported my old project logic over to handle webservices (abstraction).
 	Sunday 4 hours coding logic of the retrieving and displaying classes.  Had to mes around with handling cookie which was a pain in the butt to figure out.
 	Monday 6 hours coding logic to support class selection in a listview.  It now shows navigation from class to courses (course list is still not visible yet).  Spent 2 of that time playing around their website, creating a student user which represents better the workflow.  covade user had access to other unrelated course because it is an admin user.
-
-
-GP-6485
-Anything can ability can do to troubleshoot the issue or should they send the camera to d3
-need a proposal on how to proceed
-
-Lens.py test changing
-  Doing repeated focus on the camera. (Good idea for camera focus test).
-  Moving the lens to infinity
-  Uses lens.py.  but if we use lens .py, the camera doesn't know the lens has been moved
-  Talk to paul about.
-  add a 3a library command to move the lens
-
-  Check on paul side to see what ability does
-    so go mf, move the lens, go back to af and do a half press and see what ability does.
-	
-	
-
 	
 Radar/GM
 	time of flight
@@ -217,59 +199,51 @@ Radar/GM
 
 	What has been done so far.  And what is our path forward.
    
-   
 
-FOR 1.3
-	*Need a more detail planning*
-PDAF in all mode before July
-WYSIWYG Need to talk to kevin about this. Meeting with Thomas? Thomas needs what is required.
-	only for exposure, not for the aperture.
-Secure boot in 1.3
-PDAF++ should be in 1.3
-Mass storage, come back with estimate. I don't think it is possible.  This was removed.
-Geo tagging.  NEDevice to confirm if it is in. Need final testing. Companion app.H
-Hardware diagnostic tool: 
-	Need estimate for bist update for factory and field
+Monday June 22th 2020 status call with Zeiss:
+	- 6142:
+		Should we spend more effort into this ?
+		Do we have more ideas on what to look into ?
+		We suggest Postponing this issue past 1.3
+		
+		
+	- XMC position reporting accuracy brainstorming session: 
+		Will reach out to Jim McGarvey for availability on when he could be available for a call
+		with Ralf and Dimitry, early call.
+		
+	- OTA :
+		1.2.2 and 1.2.3: To 1.3.0
+		We need to spend sometimes testing
+		
+	- Group 2 meeting with Ralf:
+		Scheduled for Tuesday June 23rd at 9AM EST
+		
+		
+	- List of licenses used by the system
+		Pat to provide this to Armijn by end of day Monday June 22th 2020 EST.
 	
-Certs: Meeting when results are avail
-New memory support (tested)
 
-
-at 2 and at 1 diopter.
-   run from 0dpt, 1.5dpt and 3dpt
-   manually focusing to mod and infinity at start instead of scripting that
-     	
-
-
-
+    	
 SCRUM TODAY:
 	STATUS OF LENS THAT DOESN'T FOCUS VERTICALLY??? WHAT DO WE TELL ABILITY?
 		Need more time from Chuck
-		
-	SECURE BOOT (I GET IT... WAS MISSING INFO FROM MIIKKA)
-
-	UMS (Still researching)
-
-	CLEANING JIRA FOR 1.3 WHICH WE NEED TO KEEP?
-	
-	SERVICE? (NEW OFFICE SETUP) END OF JULY.
 	
 	CHECK ON EXPENSE REQUEST NATE IS SUPPOSED TO SEND
 
 	SEND AN EMAIL TO ZEISS ABOUT THAT (Ask Axel first)
 	DISCUSS AXEL IDEA OF REMOVING THE IPAD WORK AROUND AND OFFER A UI
 	MAYBE HAVE A GUI TO OFFER USERS TO SELECT ROLES
+		
 	
-	
-	BIST PASSES ON A CAMERA WITHOUT PROXIMITY SENSOR
-	
-	
+Smartboot
+
 	Lantronix would have to fuse and retest every som
 	already do something for the wifi address change 
 		maybe we could fuse at that point.
 		
 	We need a meeting between Gerry, Dimitri and Hans-Juergen
 	ability  to send 10 soms to D3 for more testing.
+	
 	
 	
 	TO TEST
@@ -302,9 +276,32 @@ SCRUM TODAY:
 	Default key is wide open.
 	
 	
+Ask REECE for a plan/strategy on Bist with estimates
+
+
+You have an upcoming Telemedicine appointment with Sleep Insights at 10:00 am tomorrow, Wednesday, June 24th.  Please click on the following link 5 minutes prior to your scheduled appointment.  Be sure to allow any pop ups that appear on your screen. https://sleepinsights.doxy.me/2
+
+
+
+
+TODO:
+Have a look at how to ensure we don't get spi interrupts while handling a spi message.
+
+Qualcomm:
+	Driver monitoring system
+	Camera monitoring system
+	Doing it all in the cloud (image analysis)
 	
-	  
 	
 	
+Thomas:
+	Fast capture in fast afs is working and do feel faster
 	
+	getting more red focuses then used to (more than should get)
+		contrast scan, contrast scan mainly end up red
+		
+	2 fast full presses, you get out only one picture
 	
+	Can hear the motor humming in the lens GP-6551
+	
+	GP-6142 Ability is finding more camera

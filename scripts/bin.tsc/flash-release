@@ -121,8 +121,8 @@ flash_build() {
     cd "${work_dir}"/jflash/Android
     pwd
 
-    adb wait-for-device
-    adb reboot bootloader
+    #adb wait-for-device
+    #adb reboot bootloader
 
     #sleep 5
     fastboot flash boot boot.img

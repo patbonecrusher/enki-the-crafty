@@ -12,14 +12,11 @@ mydir=`dirname $mydir`
 prependToPath ${mydir}/../bin.tsc
 
 # Lens aliases
-alias lens='${mydir}/../bin.tsc/lens'
-alias push_xmc='${mydir}/../bin.tsc/push_xmc.sh'
 alias get_graphs='lens log_data'
 
 # Overall repo command
 alias repo-init='repo init -u ssh://plaplante@gerrit.d3engineering.com:29418/tsc/caf/platform/manifest -b d3/dev/open_q_820 -m'
 alias repo-sync='repo sync -c --no-tags -j32'
-
 
 alias tsc110='export TSC_PATH=/home/pat/Projects/tsc/1.1.0 && export MANIF=102_master_1_1.xml && desk . tsc'
 alias tscmm2a='export TSC_PATH=/home/pat/Projects/tsc/mm_2 && export MANIF=102_master_mm_2.xml && desk . tsc'
@@ -92,3 +89,4 @@ function start_test {
 }
 
 
+alias tsc="cd ~/Projects/tsc"

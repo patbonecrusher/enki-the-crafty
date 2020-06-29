@@ -1,14 +1,13 @@
-[user]
-	name = Pat Laplante
-	email = laplante.patrick@gmail.com
+[includeIf "gitdir:~/Projects/covenofchaos/"]
+    	path = ~/.gitconfig-coc
 
 [includeIf "gitdir:~/Projects/tsc/"]
-    path = ~/.gitconfig-tsc
+    	path = ~/.gitconfig-tsc
 
 [core]
 	excludesfile = /Users/pat/.gitignore_global
 	autocrlf = false
-	symlinks = false
+	# symlinks = false
 
 [diff]
 	tool = diffmerge
