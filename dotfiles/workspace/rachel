@@ -1,0 +1,8 @@
+#!/usr/bin/expect
+
+set host rachel
+set timeout -1
+
+spawn ssh $host
+interact
+expect eof

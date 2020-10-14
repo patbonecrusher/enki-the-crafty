@@ -82,7 +82,6 @@ version=mm2_master
 build_number=latest
 build_user=0
 noflash=0
-ota=0
 
 while [[ "$#" -gt 0 ]]; do
     case $1 in
@@ -91,7 +90,6 @@ while [[ "$#" -gt 0 ]]; do
         -v|--version) version="$2"; shift ;;
         -b|--build) build_number="$2"; shift ;;    
         -u|--user) build_user=1; shift;;
-        -o|--ota) ota=1; shift;;
         *) echo "Unknown parameter passed: $1"; exit 1 ;;
     esac
     shift
@@ -102,10 +100,8 @@ echo "Version? $version"
 echo "Build Number? $build_number"
 echo "Build User? $build_user"
 echo "noflash? $noflash"
-echo "ota? $ota"
 
 work_dir=/tmp/${version}/${build_number}
-dest_file=
 
 function download_build() {
     search_dir=${TSC_ROOT_FS_WGET}/${type}/${version}
@@ -147,36 +143,6 @@ flash_build() {
     fastboot oem flash-fpgas
 }
 
-function download_build_ota() {
-    search_dir=${TSC_ROOT_FS_WGET}/${type}/${version}
-    latest_build=$(get_latest_version_wget "${search_dir}")
-    latest_ud=phoenix_${version}_${latest_build}_userdebug_ota_update.zip
-    if [[ $build_user -eq 1 ]]; then
-        latest_ud=phoenix_${version}_${latest_build}_user_ota_update.zip
-    fi
-
-    latest_path=${search_dir}/${latest_build}/${latest_ud}
-    dest_file=/tmp/${version}_${latest_build}_${build_user}.zip
-
-    wget --no-check-certificate --output-document "${dest_file}" "${latest_path}?region=virginia"
-}
-
-
 echo "${work_dir}"
-
-if [[ ota -eq 1 ]]; then
-    echo "OTA"
-    download_build_ota
-    adb root && sleep 0.5 && adb remount && sleep 0.5
-    adb push "${dest_file}" /cache/recovery/ota_update.zip
-    adb shell  "echo 'boot-recovery' > /cache/recovery/command"
-    adb shell  "echo '--update_package=/cache/recovery/ota_update.zip' >> /cache/recovery/command"
-    adb shell  "echo '--wipe_cache' >> /cache/recovery/command"
-    adb shell  "echo 'reboot' >> /cache/recovery/command"
-    adb reboot recovery
-else
-    [[ ! -d $work_dir ]] && download_build
-    [[ noflash -eq 0 ]] && flash_build
-fi
-
-
+[[ ! -d $work_dir ]] && download_build
+[[ noflash -eq 0 ]] && flash_build

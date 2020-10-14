@@ -1,0 +1,10 @@
+#!/usr/bin/expect
+
+set MYVAR deckard
+catch {set MYVAR $env(SSHHOST)}
+puts "$MYVAR"
+set timeout -1
+
+spawn ssh $MYVAR
+interact
+expect eof

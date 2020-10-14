@@ -1,6 +1,6 @@
-	-> https://www.binaryage.com/
 |> Apps to buy / wwawtch
 	->> anything from https://objective-see.com/products.html	
+	-> https://www.binaryage.com/
 	
 --------	
 
@@ -305,3 +305,599 @@ Thomas:
 	Can hear the motor humming in the lens GP-6551
 	
 	GP-6142 Ability is finding more camera
+	
+	
+	
+What can cause the camera to reboot in a loop
+	- Mismatched firware versions
+	- Missing calibration files
+	- In some cases, if the camera library crash, it would cause a reboot
+	
+	
+Meeting notes july 21st
+	6566 - retry on tau
+	6531 - run another camera
+		 - do a file check
+		 
+		 
+		5       ls /storage/808b9626-939f-48f4-9f40-8077d134d932/0/
+6       ls /storage/808b9626-939f-48f4-9f40-8077d134d932/0/DCIM
+7       mount
+8       umount /mnt/expand/808b9626-939f-48f4-9f40-8077d134d932/
+9       umount /mnt/expand/808b9626-939f-48f4-9f40-8077d134d932/media
+10      mount
+11      umount /mnt/runtime/default/808b9626-939f-48f4-9f40-8077d134d932
+12      umount /storage/808b9626-939f-48f4-9f40-8077d134d932
+13      mount
+14      umount /mnt/runtime/read/808b9626-939f-48f4-9f40-8077d134d932
+15      mount
+16      umount /dev/block/dm-1
+17      mount
+18      e2fsck  /dev/block/dm-1
+19      e2fsck -c -f  /dev/block/dm-1
+20      e2fsck -c -f -v /dev/block/dm-1
+
+different timing test on power booot
+
+
+
+
+
+tauri react
+snowpack
+
+computing division
+  hw
+  chrome
+  search hiring
+  cloud hiring
+  
+  swe
+  >7years exp
+  
+  pitts
+  
+  c++
+  cs fundamentals
+  languages fundamentals
+  
+  completion and efficiency
+  
+  
+  final interview (1 day)
+    4 technical
+	
+  final
+    team matching
+	
+  6-8 weeks
+  
+how to fix in the field... provide options for recovery in the field;
+
+home_til_good() {
+	# Move the lens to MOD
+	adb shell "camera-phoenix-test drive-lens 4 &> /dev/null"
+	sleep(2) # Sleep 2 seconds
+	modPos=read register 108
+
+	# Move the lens to Infinity
+	adb shell "camera-phoenix-test drive-lens 0 &> /dev/null"
+	sleep(2) # Sleep 2 seconds
+	infinityPos=read register 108
+
+	# Compute the number of mm
+	range=((modPos/(2*math.pi)) - (infinityPos/(2*math.pi)))
+	# range > 15.4 should be good.
+	if range > 15.4 then break
+	
+	python lens.py home -d
+}
+
+
+
+
+
+
+
+docker run -d --name devpi \
+	-e TZ=America/Montreal \
+    --publish 3141:3141 \
+    --volume /usr/local/srv/docker/devpi:/data \
+    --env=DEVPI_PASSWORD=blablabla \
+    --restart always \
+    muccg/devpi
+	
+	
+1591025312 - 1.2.3 release
+1592794322 - 1.2.2 release
+
+
+GP-6558 need to talk with Kevin about that to see when he can get 
+GP-6576 - not actually a bug.  our firmware can run for between 30-40 hours.  low memory killers.  it's good news
+
+Running a mtbf with wifi yeild the same results, only one crash over 30-40 hours.
+
+6142 bug with boot failure.  we need to give feedback to ability.  lots of camera are having this issue.
+
+Ralf power measurement request for 1.3.  Pat to do today.
+
+
+dng thumbnail preview dimitri would like axel to work on that.
+
+Reece discuss about having Axel do the thermal manager changes.
+
+Next topics:
+  - No big features for 1.4
+  - Finalize current topics:
+  - usb testing
+  - zeiss firmware server
+  - improvement features: reduction in boot up time or resume from ram time (still need to decide)
+
+
+discuss a log parser for troubleshooting issues in service
+
+
+
+
+Paul to port socket change in production
+
+
+
+
+
+Power automation box:
+   12V supply
+   7V downsampler
+   5V downsampler
+   1 12V bar
+   1 Pi 3 or 4 with heatsink
+   1 ykush
+   1 iec connector
+   
+   
+   build 1 pedestal 
+   
+
+
+
+
+
+
+
+modules
+	version
+	power
+	connectivity
+	app
+	
+
+
+chuck still looking at what could cause the issue
+	small fpc add additional friction
+	find a detection method
+	
+
+what will be achieved by the end of the week part of the minutes from today
+having a build at then of our wednesday
+
+cut out date tomorrow lunch for new fixes
+
+send a note at end of day tomorrow about which version is the right one
+
+Have qa do a image transfer suite to test ptp change
+look at the dmesg when plug over usb3
+
+
+
+
+1.05.30 = 36
+
+
+
+August 27th 2020 meeting with Zeiss
+Image path:
+	Face detection
+		Infrastructure is all setup (ITC and D3)
+		Waiting for Dimitri and Malta to implement algorithm
+		Not sure what else needs to be done (at D3)
+		Zeiss: Algorithm is done.  Testing
+		Missing: Path to the app and back (for setting the rectangle)
+		
+		D3 provide rect to zeiss
+		Zeiss identify whitch one is the good one
+		Provide rectangle sets to the app
+		App draws rects on the UI
+		UI Sees where we are focusing
+		App pushes back wich rectangle user selected
+	
+		How to pass the data should be defined.
+		Not sure it is implemented
+		
+		Tuning:
+		Once that is all integrated, Zeiss will be able to tune their algorithm
+		Might also need to adjust the face detector in the qualcomm
+	
+	
+	
+	Reduce capture time for dark frame (Dr David) (Zeiss investigation)
+		Looking into re-activitating scaling dark substraction
+		Not yet confident they can do that easily
+		Still looking into it
+		Idea: Being able to user selection dark frame selection best quality, and scale dark substraction.
+		
+		If this moves forward, D3 will have to implement the switch
+		
+		Another task (for noise cleaning):
+			to make it not only dependant on ISO but also exposure time and temperature
+			GP-6592: making the de-noising dependant on exposure time
+				for long exposure and temperature
+				
+				D3 would have to implement
+
+		Dr David and Johaness are working on that atm
+		
+		What is the timeline: not on 1.4.
+		
+		
+	
+	Focus row interpolation algorithm
+		improvement from waynes algorithm
+		Still need to analyze latest from wayne and implement it
+		Nothing to be done for D3 until end of september.
+
+
+	PDAF changes
+		nothing related
+	
+
+
+
+	Other
+		During exposure, SSD is on.  
+		Dimitri mentioned to turn off ssh and fpga during log exposure
+
+
+
+Image Path Decussion Meeting Notes
+
+Face detection
+	Zeiss has algothirm on their side
+	Provies rectangle
+	missing: Path to app and back for rectangles. Using grids?
+	Thomas needs to provide user selected rectangle.
+		Jeffrey already defines API, waiting for Thomas
+	Hard to continue without Thomas's changes
+
+	Need to tune face detector in Qualcomm
+
+Dark frame capture time
+	Looking into scaled dark frame subtract (Johannas)
+	There are artifacts, so isn't guarenteed
+	Pending Zeiss investigation
+	Likely not in 1.4. longer term investigation while waiting for service.
+
+Temperature change during capture
+	Due to SSD power?
+	Imager power?
+	FPGA power?
+	App could not turn it on during long exposures.
+
+GP-6592 Make noise cleanning dependent on exposure time and temperature, instead of just ISO.
+	Zeiss will define
+	Perhaps in 1.4
+
+Raw capture longer than 30 seconds
+	"Simple" change from CL.
+	There is a bug.
+
+Focus row interpolation algorithm (improve from Wayne older method)
+	Zeiss (Johannes) looking into 4k performance
+	Bad in some situations, not clear if it improves in other situations.
+	On hold because people are working on other things.
+	Not like for 1.4
+
+PDAF
+	Contrast stastics are already there
+
+XMC
+	Waiting on Ralf with more issues.
+	We'll share results with other lens related issues
+	Plan meeting on Tuesday 9:30?
+
+
+
+
+
+Burst break down discussion
+	
+	
+aws project
+	ti gavve code that read image from a webcam
+	display on the screen
+
+	we get a pointer to an image and to an overlay on the screen
+	we pass data to neural network and display box on the screen
+
+	v4l2 application to read from webcam
+	
+	amazon provide the runtime open source
+		run the output from sagemaker
+		
+	option 1:
+		tda device tree + uboot and integrate the demo
+		
+		
+		
+note
+	HJ talks about the result from NTS
+		what does it mean, can we do something?
+		schedule a meeting with jeff, jim, reece, cyril, to discuss the I failure in usb2
+		
+		
+	Discussion about battery
+		Reece to try something today
+		
+	Axel discussion about resume time from ram.
+		possibility to improve kernel
+			kernel now: 600-650 ms to resume
+		user space:
+			1 second to resume
+			
+		Still looking at the user space.
+		Can improve kernel by 300 ms maybe
+			He is updating the document with this info
+			It is a work in progress.
+			
+		We should not resume the SSD when we resume the system
+		
+	There is also the lens homing that prevent the user from taking picture.
+		We should look at that later
+		Schedule a meeting with Paul to discuss user space
+		Paul to look at the lens homing
+		
+	Axel to continue trying to improve the 300ms in kernel
+	Axel to keep profiling user spacing
+	
+	
+	Pat to share new calibration stuff once heater and cooler are done
+	Schedule a meeting with Josh and Dimitri to discuss infrastructure.
+	
+	
+	
+future
+	knowing wich process to follow
+	have a process and gates
+		this is coming in, and make sure that whatever goes out of the company is also correct
+		
+	check the board from the vendor before you continue to develop on it.
+		some vendor you can expect lots of trouble
+		
+		
+		
+nts:
+	what could be the impact to the users for each failure
+	what would it take to fix the rest (not sure we can estimate this)
+	what other tool would we need
+	
+	
+GP-6630
+  Ask kevin to double check is patch
+  Ask Paul about his increased frame rate
+
+
+Jason
+Test cases are incorect.... some
+
+Pat
+Testing bist changes
+
+Reece
+
+
+Paul
+XMC power change with axel
+in debugging mode
+
+Kevin
+testing
+
+Chuck
+Switched from offense to defence.
+
+
+Friday Saturday 25th Daily status meeting with Zeiss
+
+
+
+
+jflash_file="/system/vendor/etc/phoenix/jflash_checksums.txt"
+jflash_dir="/dev/block/platform/soc/624000.ufshc/by-name"
+bist_data_dir="/data/data/com.d3engineering.selftest/files"
+
+
+
+Monday Sept 28 2020
+	pat to produce mtbf report
+	
+
+	retuned denoising (will create a GP tomorrow)
+		don't merge today
+		maybe tomorrow
+
+	Josh has the infrastructure finished in azure
+	
+	Emmanuel tested the wrong build (that pat mistakeling)
+	
+	GP-6633: Video not replaying right
+		Turns out to be something when closing the codec, 100% reproducible in 1.3.1 and never in 1.2.1
+		Thomas to come back with the last working version.  Pat will come up with the gerrit commit that introduced this issue.
+		
+	awesome , do you have some instructions on how they could run their own build to test everything
+Josh Watts
+The build jobs are exact mirrors: master is already building daily
+So same use-case as back when they used to access our Jenkins directly
+It just archives locally w/ rules to only keep so many for so long
+
+paul
+	working on xmc changes having issues.  more problem then when he starting with
+	tau testing issue. imager missaligning like we've seen before not sure what can be done
+	
+charles moon
+	collected tons of data
+	still processing the data
+	
+reece
+	no updates
+	
+pat
+	doing tau log analysis
+	
+kevin
+	still testing full functional.  no bug
+	
+jason
+	still testing full functional.  no bug
+	
+	
+Tuesday Sept 29 2020
+	Len discussion:
+		Should see more info on Thursday from a system level point of view
+		Hope by end of wednesday the len will be stable both horizontally and vertically
+		
+		https://d3engineering.atlassian.net/browse/GP-5864
+			Ralf likes the change
+			Paul to merge it we should do a release today
+			
+		Ralf:
+			When interpreting the GMR signal there is an offset compensation
+			and there is a question from Nitoh wether they can relax their specification
+			for the GMR sensor to allow more correction in the offset.
+			
+		No action needed today.
+			Chuck will receive lens in the future to test.
+			
+		Patrick to run a test of the new xmc on thursday
+		
+	David Abreu new GP???
+		Not on the call, no status
+		
+	GP-6633
+		Klaus is still working on finding when the regression happened
+		Issue with missing builds
+		
+		
+	Tau
+		Pat should get the same error Seen in Finland
+		Pat will restart a new run with the latest master
+		
+	Fast resume part B
+		Lots of issue to work through
+		Not faster right now
+		Changes the timing that cause severe crashes
+		More difficult than we'd hope
+		
+	OTA version check
+		Want to ensure it works flawlessly before merging in 1.3.1
+		
+	Gallery
+		There is light but it is far away.
+		More update tomorrow
+		
+		
+	I+ -> Batt-
+	I- -> Supply-
+	V+ -> Supply+
+	V- -> Supply-
+	Batt+ -> Supply+
+		
+
+	To use with the box:
+ 	Supply- -> Batt-
+    I+ -> Supply+
+    V+ -> Supply+
+    V- -> Supply-
+    Batt+ -> I-
+
+	Add a build thing to make the power scripts
+	Add a version to the power scripts
+
+
+GP-6576 - Hold off on merging in 1.3.1
+GP-6535
+Send the key to  Dimitry encrypted delta3EchoNovemberGolf
+Ask josh about gerrit UI
+
+
+Long xmc discussion.
+	Contact Ralf or Chuck for more details
+
+D3 is having a jenkins build issue at the moment due to the changes related to building in azure.
+	We know the cause, we are working on a fix
+	
+GP-6623 - needs to be done before final release
+	Should have a new app ready for tomorrow morning
+	
+MTBF results were good after reverting the patch:
+	https://gerrit.d3engineering.com/#/c/25283/
+	We will keep this out of 1.3.1  It was an slight optimization change, not having it will have no impact on the user's experience
+	
+
+D3 to produce 2-3 more box for power measurement
+D3 to finish the cleaning of the power scripts
+
+
+tt = dict(map(lambda elem: (elem.split(": ")[0], float(elem.split(": ")[1])), filter(lambda s: not s.startswith("I:") and not s.startswith("D:") and not s.startswith("W:") and not s.startswith("E:") and not s.startswith("Top ") and not s.startswith("Bottom ") and not s.startswith("T:"), t)))
+
+
+Still missing in 1.3.1 - will be finalized on monday
+e-label (regulatory stuff)
+manual
+
+
+
+pyjflash to flash 1.0.8 on a fuse camera.  == no good
+rtc clock changes in master would need to be in 1.4.0 == was merged in 1.3.1
+
+
+
+
+
+
+
+
+
+GP-6576 - should not be an issue
+	but should we merge https://gerrit.d3engineering.com/25320
+	
+-> doing 2 build of the same code (lbs1/lbs3)
+	20201009_1041 built on lbs1
+	??? built on lbs3
+	
+1.3.0 was built with official java 1.7
+1.3.1 on lbs1 is built using jabba openjdk@1.7
+
+-> Rerun the test with the october 1 build
+	If this doesn't fail WTF
+-> Rerun the test with the october 5th
+	If this doesn't fail (previous run was bad)
+	
+We need to know if the test results of Tau are consistents given the same version.
+
+-> Add to the build script creation of a manifest with the software version used to build the firmware
+
+-> Was there any changes in any of NEDevices background java daemon...
+-> Any rogue background??? That appeard in 1.3.1?
+
+
+GP-6531
+kevin ssd went bad (C 120/broken shutter)
+pat ssd went bad (C2....)
+other tau camera is starting to go bad
+
+
+
+
+
+
+
+

@@ -73,7 +73,8 @@ endfunction
 :set number
 :set wildmenu
 :set wildmode=list:longest,full
-set guifont=Source\ Code\ Pro\ for\ Powerline "make sure to escape the spaces in the name properly
+" set guifont=Source\ Code\ Pro\ for\ Powerline "make sure to escape the spaces in the name properly
+set guifont=MesloLGS\ NF "make sure to escape the spaces in the name properly
 
 " -----------------------------------------------------------------------------
 "  Keyboard shortcut mapping.
